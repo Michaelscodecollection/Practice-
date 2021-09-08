@@ -1,0 +1,33 @@
+function capatalize(s){
+return [s.split('').map((v,i)=>i%2==0?v.toUpperCase():v.toLowerCase()).join(''),           s.split('').map((v,i)=>i%2!==0?v.toUpperCase():v.toLowerCase()).join('')]
+}
+---------------------------------------------------
+function capitalize(s){
+  let odd=[]
+  let even=[]
+  s= s.split('')
+  for(i=0;i<s.length;i++){
+    if(i%2===0){
+    even.push(s[i])
+      odd.push(s[i].toUpperCase())   
+    }else if( i %2 !==0){
+       odd.push(s[i])
+      even.push(s[i].toUpperCase())  
+    }
+  }
+  odd=odd.join("")
+  even=even.join('')
+  
+ let arr=[]
+  arr.push(odd)
+ arr.push(even)
+  
+  return arr
+};
+---------------------------------------------------------
+
+function capitalize(s){
+  const odd = s.split("").map((l, i) => i % 2 !== 0 ? l.toUpperCase() : l).join("");
+  const even = s.split("").map((l, i) => i % 2 === 0 ? l.toUpperCase() : l).join("");
+  return [even, odd];
+};
