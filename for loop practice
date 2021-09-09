@@ -1,0 +1,7 @@
+const val = ['this','array','is','for','val']
+function forloopforyou(val){
+  for(let i = 0; i<val.length; i++){
+    console.log(val[i])
+  }
+}
+console.log(forloopforyou(val));
