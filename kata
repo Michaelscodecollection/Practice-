@@ -1,0 +1,18 @@
+
+
+const hello = s =>
+  `Hello, ${s ? (s[0].toUpperCase() + s.slice(1).toLowerCase()) : 'World'}!`;
+// so here we have our one liner
+// we start of by creating our function using ES6 notation. we wrap the enture return in a 
+// back tick. we write our Hello. this consolidates the code since both expected returns
+//  contain a greeting. the response after hello is what differs. so we use a ternary
+// operator from there. we use our dollar sign and curly braces so as to allow the return 
+//  statement ot be at variable to whatever is recieved. if s is accounted for, meaning it exists
+//  we grab the 0 index, capitalize it with our toUpperCase method/ using dot notation
+// and we slice from the 1 index onward and we lowercase it. the result would be 'hello
+// Name.' if there is no name meaning their is no input accounted for, we return a simple
+// 'hello world.' main methods are toUpperCase- uppercases whatever this method is set and 
+// attached to. slice- which  slice() selects the elements starting at the given start argument, 
+// and ends at, but does not include, the given end argument. so we sliced from the 1 index onward and used toLowerCase to 
+// allow for our return to meet basic grammer requirments. 
+  
