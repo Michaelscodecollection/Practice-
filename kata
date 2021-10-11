@@ -16,3 +16,8 @@ const hello = s =>
 // and ends at, but does not include, the given end argument. so we sliced from the 1 index onward and used toLowerCase to 
 // allow for our return to meet basic grammer requirments. 
   
+  
+  function roundIt(n){
+  var [a, b] = n.toString().split('.');
+  return a.length > b.length ? Math.floor(n) : a.length === b.length ? Math.round(n) : Math.ceil(n);
+  return Math.Floor if n is true(true), if false test to see if a and b are equal(false but true), if true return Math.round if it is still false, return Math.ceil.
