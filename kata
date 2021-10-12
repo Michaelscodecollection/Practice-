@@ -21,3 +21,23 @@ const hello = s =>
   var [a, b] = n.toString().split('.');
   return a.length > b.length ? Math.floor(n) : a.length === b.length ? Math.round(n) : Math.ceil(n);
   return Math.Floor if n is true(true), if false test to see if a and b are equal(false but true), if true return Math.round if it is still false, return Math.ceil.
+
+function solution(a, b) {
+  return a.length < b.length ? a + b + a : b + a + b
+}
+// so frustatingly enough, this solution once again was way easier than I was making it out to be. here we used an effecient ternary operator. if a < b we return a + b + a : if
+that is not the case, we use b + a + b. thats it. im not sure if a & b get split automatically in half. my first approach was to split the shorter one but you can only really do that with
+an array and thats not what we started with, so trying to make that happen was going to over complicate it for sure,. 
+function getDrinkByProfession(param) {
+  param = param.toLowerCase();
+  
+  switch(param) {
+    case "jabroni": return "Patron Tequila";
+    case "school counselor": return "Anything with Alcohol";
+    case "programmer": return "Hipster Craft Beer";
+    case "bike gang member": return "Moonshine";
+    case "politician": return  "Your tax dollars";
+    case "rapper": return "Cristal";
+    default: return "Beer";
+  }
+}
