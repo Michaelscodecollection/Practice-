@@ -41,3 +41,35 @@ function getDrinkByProfession(param) {
     default: return "Beer";
   }
 }
+
+function checkExam(array1, array2) {
+ // store points in variable (+=, -=)
+  //we will need a for loop 
+  // compare arrays. if array1[i] === array2[i] add 4
+  // if array1[i] !== array2[i] subtract 1 
+  // if no answer, add zero
+  //if points < 0 return 0.
+  //["a", "a", "b", "b"], ["a", "c", "b", "d"]
+  let points = 0;
+  
+  
+  // here we create our for loop. now we know we are dealing with two arrays and we are comparing the both of them with one another. since we have the same length this will require
+  one for loop. we will be comparing them side by side. if both answers are equal '===' we want score += 4. if the answer is incorrect we want score -= 1. if no answer is provided
+  we want score += 0. 
+  in our final return we want to check if score is < 0. if the final score is < 0, we will set the score = to 0 as you cannot have a negative score in this scenerio. 
+  for (let i=0; i<array1.length; i++){
+    if (array1[i] === array2[i]){
+      points += 4;
+    }else if (array2[i] === ''){
+      points += 0;
+    }else{
+      points -= 1;
+    }
+  }
+  return points < 0 ?  points = 0: points
+  
+ // if (points < 0){ 
+   // points = 0;
+ // }
+  //return points
+}
