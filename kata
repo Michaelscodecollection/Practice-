@@ -16,12 +16,12 @@ const hello = s =>
 // and ends at, but does not include, the given end argument. so we sliced from the 1 index onward and used toLowerCase to 
 // allow for our return to meet basic grammer requirments. 
   
-  
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   function roundIt(n){
   var [a, b] = n.toString().split('.');
   return a.length > b.length ? Math.floor(n) : a.length === b.length ? Math.round(n) : Math.ceil(n);
   return Math.Floor if n is true(true), if false test to see if a and b are equal(false but true), if true return Math.round if it is still false, return Math.ceil.
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function solution(a, b) {
   return a.length < b.length ? a + b + a : b + a + b
 }
@@ -41,7 +41,7 @@ function getDrinkByProfession(param) {
     default: return "Beer";
   }
 }
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function checkExam(array1, array2) {
  // store points in variable (+=, -=)
   //we will need a for loop 
@@ -51,7 +51,7 @@ function checkExam(array1, array2) {
   //if points < 0 return 0.
   //["a", "a", "b", "b"], ["a", "c", "b", "d"]
   let points = 0;
-  
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
   // here we create our for loop. now we know we are dealing with two arrays and we are comparing the both of them with one another. since we have the same length this will require
   one for loop. we will be comparing them side by side. if both answers are equal '===' we want score += 4. if the answer is incorrect we want score -= 1. if no answer is provided
@@ -73,3 +73,20 @@ function checkExam(array1, array2) {
  // }
   //return points
 }
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const checkExam = (array1, array2) => {
+  let result = array2.reduce(
+//     reduce syntac calls for (previous value, current value, current index)
+//     previous value in this case is the cumulative score. answer is the current value we are
+//     // measuring. i stands for the current index. these are all in respect to array2.
+    //if the answer of array2(the current value) == array1[i] score(previous value increases by 4)
+    // score represents the cummulative result of the reduce method so far.(previous)
+//     answer represents the current value being measures/compared. 
+    //i represents the index value being measured. 
+    (score, answer, i) => {
+      if(answer == array1[i]) return score += 4;
+      else if(answer == 0) return score += 0;
+      else return score - 1;
+    }
+  , 0);
+  return result < 0 ? 0 : result;
