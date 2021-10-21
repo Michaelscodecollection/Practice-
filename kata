@@ -90,3 +90,11 @@ const checkExam = (array1, array2) => {
     }
   , 0);
   return result < 0 ? 0 : result;
+  
+  }
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const greet = (name, owner) => {
+return name === owner ? 'Hello boss' : 'Hello guest' 
+}
+// I got the equation and function right. I just need to remember to return.
