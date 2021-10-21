@@ -98,3 +98,14 @@ const greet = (name, owner) => {
 return name === owner ? 'Hello boss' : 'Hello guest' 
 }
 // I got the equation and function right. I just need to remember to return.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
+// here we are using regex, a syntax I am completeley unfamiliar with but am excited to dive into
+// we have our es6 function notation that leads to our implementation. 
+// from left to right we have s(string).replace(variable to be reolaced, replacement variable)
+// or in this case s.replace(/0/g,O).  here we ourline that we are targetting /0/ and that we are 
+// targetting 0 globably with (g) meaning we are targetting every representation of this.
+// and we want to replace this with '0'. we tak on replace after each replace because these are all an
+// extention/ method to be used on the s(our string). I need to be more curious about the methods at my disposal. I need to get creative in searching for these methods
+// so we have correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
