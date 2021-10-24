@@ -109,3 +109,10 @@ correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 // and we want to replace this with '0'. we tak on replace after each replace because these are all an
 // extention/ method to be used on the s(our string). I need to be more curious about the methods at my disposal. I need to get creative in searching for these methods
 // so we have correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function paperwork(n, m) {
+  return n < 0 || m < 0 ? 0 : n * m
+}
+
