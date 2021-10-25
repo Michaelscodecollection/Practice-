@@ -144,5 +144,8 @@ function getRealFloor(n) {
 }
 //so the way we nest ternary operators is we place the next function in the false placment and continue --> argument trueValue : falseButTry ? true : stillfalseButtry ? true : finalIfFalse. 
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function testEven(n) {
+  return n % 2 === 0 ? true : false;
+}
 
