@@ -142,6 +142,7 @@ here we use a ternary operator. if n > 13 is true, we return n-2. if it is false
 function getRealFloor(n) {
   return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
 }
+//so the way we nest ternary operators is we place the next function in the false placment and continue --> argument trueValue : falseButTry ? true : stillfalseButtry ? true : finalIfFalse. 
 
 
 
