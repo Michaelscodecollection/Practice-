@@ -115,4 +115,33 @@ correct = s => s.replace(/0/g,'O').replace(/1/g,'I').replace(/5/g,'S')
 function paperwork(n, m) {
   return n < 0 || m < 0 ? 0 : n * m
 }
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const century = year => Math.ceil(year/100)
+// we input a 4 digit number that must return as a two digit number. we know that 
+// to get the century, our year must be rounded up i.e 1700 is the 18th century.
+//  so we know we are going to use a Math.ceil, this will round up whatever our output is. 
+// we then divide the year by 100 to give us a two difit number. 1705 turns into 17.05, which then
+// turns into 18 when the Math.ceil method is used. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//so here we are converting from american floor units to european floor units. we know that european units start at 1 whereas american united start at 0. 13 does not exist so
+//starting here, we know that the difference between the two moves from 1 to 2.
+//so before 13 if e < 13 we return n-1
+//if greater than 13 we return n-2. but it has to start greater than 0 otherwise we get a negative number. 
+//so if n < 0 (starting at 1) we use n-1. if n >= 13 we move to n-2. 
+
+const getRealFloor = n => {
+  if(n >= 13) return n - 2
+  if(n > 0) return n - 1
+  return n
+}
+
+or
+
+here we use a ternary operator. if n > 13 is true, we return n-2. if it is false but n > 0 is true, we return n-1. if thats false we just return n 
+function getRealFloor(n) {
+  return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+}
+
+
 
