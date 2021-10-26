@@ -148,4 +148,6 @@ function getRealFloor(n) {
 function testEven(n) {
   return n % 2 === 0 ? true : false;
 }
-
+//I need to remember that there are all the answers I want and finding most methods are intuitive. figure out what i need to do, articulate what method that could be or terminologies that would
+//fit into a method type, search. every answer I need is there and often times its less work to look for the method than it is to build code from scratch. Im wasting too much time
+// trying to build codes and functions when there are methods out there that people have built to save me time. to ignore this is to hold myself back. I need to take this seriously. 
