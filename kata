@@ -151,3 +151,56 @@ function testEven(n) {
 //I need to remember that there are all the answers I want and finding most methods are intuitive. figure out what i need to do, articulate what method that could be or terminologies that would
 //fit into a method type, search. every answer I need is there and often times its less work to look for the method than it is to build code from scratch. Im wasting too much time
 // trying to build codes and functions when there are methods out there that people have built to save me time. to ignore this is to hold myself back. I need to take this seriously. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function expressionMatter(a, b, c) {
+//we are looking for the largest number available. we have a list of arguments that we want to pass through. at the end of the execution we want the computer to return to us
+// the largets number. we use Math.max, which has the syntax Math.max(value1, value2, value3) or in other words Math.Max|imum value of|( equation1, equation2, equation3). 
+//so as follows we break it down.
+  return Math.max(
+  // we are asking the computer to return the maxiumum value out of the following equations
+    a + b + c,
+    a * b * c,
+    a * (b + c),
+    (a + b) * c,
+    a + b * c,
+    a * b + c,
+  );
+}
+when i hear something along the lines of  return the largest number, I need to think about Math.max as my first train of thought. I didnt realize I could use equations in the syntax
+//looking back it makes sense this would be a fucntional use of the method. I need to remind myself that each method is more powerful and versatile than my insticnts say. im still
+//over complicating things. there are simple solutions. if i had typed in return largest value, there is no doubt Math.max would have been my first option. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function squareArea(A){
+  // so we are need to break this down. if we find the cirumfrence of the circle, we will
+  // be able to find the diameter of the square because the diameter will be equal to the 
+  // circles radius. once we find the radius we simpily pass it thorugh an equation to find the 
+  // area of a square. we use Math.round to round to nearest two decimals.
+  var circum = 4 * A;
+  var radius = circum / (2 * Math.PI);
+  var area = Math.pow(radius, 2);
+  return Math.round(area*100)/100
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    // we use the spread operatir so that the computer seperates the values of the array to be 
+    //compared instead of treating the whole array as a single value. we use spread
+    //operators when we are dealing with array lists for that reason. 
+    return Math.min(...args)
+  }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+usdcny = $ => `${($ * 6.75).toFixed(2)} Chinese Yuan`;
+
+//this was a super clever appraoch. I liked how they used the dollar sign as the value placeholder being inputted. I did everyhting right up until the toFixed method, which ultimatley ended
+//up being a relaly cool tool once I did some research. basically it just fixes the amount of decimal places being returned. we create our input variable, use back tics to return the
+//final value in a string with text. thats about it
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let twiceValue = sonYearsOld * 2;
+  //lets say the dad is 40 and the son is 13. the father was twice as old as the son at 26
+//   so we return dads age - twice value to get the years ago. if we go in the negative then we know
+  //that we have to add years, so we instead return twiceValue-dadYearsOld to get the amount of years until
+  return dadYearsOld - twiceValue >= 0 ? dadYearsOld - twiceValue : twiceValue - dadYearsOld;
+
