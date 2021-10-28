@@ -203,4 +203,43 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 //   so we return dads age - twice value to get the years ago. if we go in the negative then we know
   //that we have to add years, so we instead return twiceValue-dadYearsOld to get the amount of years until
   return dadYearsOld - twiceValue >= 0 ? dadYearsOld - twiceValue : twiceValue - dadYearsOld;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function updateLight(current) {
+  
+  return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
 
+}
+
+const reverseSeq = n => {
+let arr = [];
+  for (let i=n; i>0; i--) {
+  //we start at n and we work our way down after each iteration. 
+    arr.push(i);
+    } return arr;
+};
+
+// so here I did everything right except for the syntax of my for loop. I wasnt thinking. I need to look at each individual mechanism im coding. Im not paying attention. 
+// so in this case I actually tried to make it simpiler than it was. although im pleased i searched for a possible solution, the switch case was an obvious solution that I should have
+// approached and then refactored. I think what I need to do is approach the longer versions and THEN refactor instead of just trying to refactor. 
+// if im dealing with values and a string like this i need to think of more creative solutions. I need to ask myself what do my available resources fit into
+function basicOp(operation, value1, value2) {
+    switch (operation) {
+        case '+':
+            return value1 + value2;
+        case '-':
+            return value1 - value2;
+        case '*':
+            return value1 * value2;
+        case '/':
+            return value1 / value2;
+        default:
+            return 0;
+    }
+}
+
+function digitize(n) {
+  return String(n).split('').map(Number).reverse()
+}
+
+// so my first inclenation was to split and reverse. while that was correct, I forgot one thing. you cant split integers. I need to convert to a string, split, map out that string as Numbers,THEN 
+//I reverse it. 
