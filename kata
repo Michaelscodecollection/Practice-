@@ -243,3 +243,40 @@ function digitize(n) {
 
 // so my first inclenation was to split and reverse. while that was correct, I forgot one thing. you cant split integers. I need to convert to a string, split, map out that string as Numbers,THEN 
 //I reverse it. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+var summation = function (num) {
+  let result = 0;
+  for (var i = 1; i <= num; i++) {
+  //we start i at 1 because it is only being returned as a positive number and we are only including numbers <= 1. we then make i<=num so that num is included in the final addition. 
+  
+    result += i;
+  }
+  
+  return result;
+}
+// I had all the right instincts. I did two things wrong. I didnt set the function right which may have been why I kept getting 0/ NAN, I set I to 0 and num. I knew that it was going to be 
+// a different type of for loop, and I was paying attention to that this time, which is encouraging. And I made i < num instead of <= num, which makes sense because we wanted to
+//include the last number in the addition too. I also kept trying to return num[i] which isnt the value of the index im targeting, its the index number. If i want the value of whatever
+iteration im on, i simp[ily need to type i
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function numberToString(num) {
+  return num.toString()
+}
+ 
+ function boolToWord( bool ){
+ return bool ? 'Yes' : 'No';
+}
+
+const opposite=(number)=> {
+  return number < 0 ? Math.abs(number) : -number;
+}
+
+function even_or_odd(number) {
+  return number % 2 === 0 ? 'Even' : 'Odd';
+}
+const otherAngle = (a, b) => {
+  // All angles of a traingle will add up to 180. 
+  // return 180 - (a + b)
+  
+  return 180 - (a+b);
+}
