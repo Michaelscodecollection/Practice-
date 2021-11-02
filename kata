@@ -280,3 +280,10 @@ const otherAngle = (a, b) => {
   
   return 180 - (a+b);
 }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const doubleChar = (str) => str.split("").map(c => c + c).join("");
+//so we want to repeat a string. my first instinct of split and join were correct, I was just missing how to connect the two in this context. so we split, which turns it into an array
+// beause its an array and we are able to use the map method to make copies of what we already have available. we basically say that we want to take c => and make two c's. 
+//once we that function executes and we have two of every iteration (naturally dont by the map method) we then join it('') with no space in the middle.
