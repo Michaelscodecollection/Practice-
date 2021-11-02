@@ -287,3 +287,21 @@ const doubleChar = (str) => str.split("").map(c => c + c).join("");
 //so we want to repeat a string. my first instinct of split and join were correct, I was just missing how to connect the two in this context. so we split, which turns it into an array
 // beause its an array and we are able to use the map method to make copies of what we already have available. we basically say that we want to take c => and make two c's. 
 //once we that function executes and we have two of every iteration (naturally dont by the map method) we then join it('') with no space in the middle.
+
+const digitize = (n) => { return String(n).split('').map(Number).reverse() }
+//so in this case i didnt realize that the split method only works with strings. so before i can split i have to make it a string with the String method. cool. once
+// I its a String and split, I map out what was split with maps argument (the parameters given to the computer to determine how to map out the data) being the Number method, which will 
+//turn the string into numbers. now that we have our numbers split up in an array, we use the reverse method to flip and we return the final product.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function twoHighest(arr) {
+  return [...new Set(arr)].sort((a, b) => b - a).slice(0, 2)
+  // so here we are using a spread operator and new operator to create a new array which will be set using the inputted arr that will only return unique elements. that is only one
+  //of each instead of all of them. if there are 2,2,2,5,5,9,2,10 the new array will return as 2,5,9,10. we the sort the new array with a function(a,b)=>b-a returning the largest numbers
+  //first using basic sorting syntax. we then slice from 0,2 (the first and second items) and return.
+}
+// while i didnt get this one, im super stoked because i basically touched on every element the solution had, which is encouraging to say the least. I played with sort, slice, created a a,b equation
+.i neew to figure out what ...new and Set is. Im assuming ...new creates a new array
+
+
+
