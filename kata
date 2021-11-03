@@ -302,6 +302,21 @@ function twoHighest(arr) {
 }
 // while i didnt get this one, im super stoked because i basically touched on every element the solution had, which is encouraging to say the least. I played with sort, slice, created a a,b equation
 .i neew to figure out what ...new and Set is. Im assuming ...new creates a new array
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function twoHighest(arr) {
+var stringToNumber = function(str){
+  // put your code here
+  return Number(str);
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function abbrevName(name){
+let nameArr = name.split(' ')
+return (nameArr[0][0] + '.' + nameArr[1][0]).toUpperCase();
+}
 
-
-
+function twoHighest(arr) {
+  return [...new Set(arr)].sort((a,b)=> b-a).slice(0,2)
+}
+// function twoHighest(arr) {
+//   return [...new Set(arr)].sort((a, b) => b - a).slice(0, 2)
+// }
