@@ -332,4 +332,31 @@ function invert(array) {
   }
    return newArr;
 }
- 
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const positiveSum =(arr)=>{
+  let count=0
+  for (let i=0; i< arr.length; i++){
+    if(arr[i] > 0)
+      count += arr[i];
+  }
+  return count;
+}
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function positiveSum (arr) {
+  return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
+}
+
+
+const positiveSum =(arr)=>{
+ return arr.reduce((cumm,curr)=>cumm + (curr > 0 ? curr : 0),0);
+//   with a reduce funtion, if we want to get the sum of an array, we need to clarify to
+  //computer that we want it to start at the zero index because without an initial value
+  //provided, it starts at the 1 index.
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  function enough(cap, on, wait) {
+ return wait <= (cap -on) ? 0 : Math.abs((cap-on)-wait)
+  
+  
+}
+  
