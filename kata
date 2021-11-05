@@ -369,3 +369,56 @@ const positiveSum =(arr)=>{
 function isDivisible(n, x, y) {
   return n % x === 0 && n % y === 0 ? true : false;
 }
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function remainder(a, b){
+  return a > b ? a % b : b % a
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function enough(cap, on, wait) {
+ return wait <= (cap -on) ? 0 : Math.abs((cap-on)-wait)
+  
+  
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    return length * width * height
+  }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > (classPoints.reduce((a,b)=>a+b)/classPoints.length) ? true : false;
+}
+
+function switchItUp(number){
+  switch(number) {
+    case 0:
+      return 'Zero';
+    case 1:
+      return 'One';
+    case 2:
+      return 'Two';
+    case 3:
+      return 'Three';
+    case 4:
+      return  'Four';
+    case 5:
+      return 'Five';
+    case 6:
+      return 'Six';
+    case 7:
+      return 'Seven';
+    case 8:
+      return 'Eight';
+    case 9:
+      return 'Nine';
+    default:
+      return 'Unknown number';
+  }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
