@@ -422,3 +422,25 @@ function switchItUp(number){
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function invert(array) {
+   return array.map( x => x === 0 ? x : -x);
+}
+
+//okay, so I had the right assumption of mapping but i didnt follow that hunch. mapping seems to be a function I need to get more comfortable using. I need to remember that mapping is such
+// a great tool for whenever I want to use for loop functionality while also applying a function into the contents. Here We return a mapped array with rach iteration (x) going through
+// a function that tests if x === 0. if x does not deeply equal 0
+
+function areYouPlayingBanjo(name) {
+ return name[0] === 'R' || name[0] === 'r' ? `${name} plays banjo` : `${name} does not play banjo`
+
+}
+function maps(x){
+return x.map(x => x * 2)
+}
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump - (fuelLeft * mpg) <= 0 ? true : false
+};
+
+const areaOrPerimeter = function(l , w) {
+  return l === w ? l * w : 2 * (l+w);
+};
