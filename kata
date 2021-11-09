@@ -444,3 +444,40 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 const areaOrPerimeter = function(l , w) {
   return l === w ? l * w : 2 * (l+w);
 };
+
+  //so I tried  to use a spread operator which may have worked but was a lot more complicated.
+  // I was on the right track with everything else but had a couple syntax issues.
+  // here we split the array, sort, target the -1 index which is the last characted in each
+  //individual string and we create our function for sorting with a > b. I didnt realize this 
+  //before but when sorting by numbers we use the equation (a -/+ b) but when we sort letters we
+  //have to use (a >/< b). so again I was on the right track. I tried targeting the index 
+  //but again, that wasnt going to work the way that I had hoped. instead I should have used
+  //a.slice(-1) which would target the end/ final character in each iteration.
+  const last = ( $ ) => $.split(' ').sort((a,b)=> a.slice(-1) > b.slice(-1))
+}
+
+
+const numbers = (...arr) => arr.every(x => typeof x === 'number')
+
+//so here we say that whatever arr is will be spread as it passes into the function. 
+// we then attach a every method to arr to check if every iteration of the arr matches.
+// in every() we pass a function that will check if the typeof x is = to number. 
+//every has a call back that will naturally return true or false.
+
+discovered a cool method called every(which checks if iteration of a delivered array matches a the parameter defined by a function in the callback)
+
+
+function square(n){
+return Math.pow(2, n-1)
+//so we basically just want to pass through the returned value of the inputted number - 1 
+  //and them doubled.
+}
+
+function spongeMeme(sentence) {
+return sentence.split('').map((v,i) => i % 2 ? v.toLowerCase(): v.toUpperCase()).join('');
+} 
+//super stoked. even though i didnt get it and ignored by gut, my hunch was completeley correct. Im growing the intuition. Here we split the sentence. because we want to deal with each
+//iteration (which basically means we need a for loop) we use a map and pass a function in map to tell the computer how we want to treat each iteration (DANK!). we then pass through our parameters.
+//which is a function. I forgot the syntax for map. we have v,i . v standing for the current element and i so that we can target the elements index. we target the index with i % 2 === 0
+// if true we manipulate the element. so were dealing with the element AND the index. luckily for us map has it built in to distinguish the two. I have to remember that moving forward because I
+//almost had it. 
