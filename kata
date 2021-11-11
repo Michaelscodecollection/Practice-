@@ -481,3 +481,43 @@ return sentence.split('').map((v,i) => i % 2 ? v.toLowerCase(): v.toUpperCase())
 //which is a function. I forgot the syntax for map. we have v,i . v standing for the current element and i so that we can target the elements index. we target the index with i % 2 === 0
 // if true we manipulate the element. so were dealing with the element AND the index. luckily for us map has it built in to distinguish the two. I have to remember that moving forward because I
 //almost had it. 
+
+// ficing code const findLongest = (str)=>{
+  
+  var spl = str.split(" ");
+  var longest = 0
+  
+  for (var i = 0; i < spl.length; i++){
+    if (spl[i].length > longest) {
+      longest = spl[i].length
+    }
+    }
+    return longest
+}
+
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter(b => !geese.includes(b));
+};
+
+okay so on this one, I actually had the logic right but i mixed up the syntax. in my return i did return birds.filter(bird => bird.includes(...geese)), looking back, I realize
+// this makes sense btecause i used the input, and then searched the the input to see if it would include the geese array. !gees.includes(b) is really asking the computer
+// if the array geese includes b. if it does not, meaning we get a return value of true, we filter it out. i also wasnt paying attention to what the problem was really asking. 
+I thought the point was to only keep the defined birds when in reality I was supposed to filter our the defined birds. Im happy because my logic was almost correct in that case.
+// just to be clear, the filter method creates a new array filled with true values and removes false values. the includes method is a true/false method. which is exactly what we needed
+//for the filter. this is also why we had to use a ! because we were only wanting to keep the values !included in our geese array.
+//if b is not included in geese, then we keep the value.
+
+function hoopCount (n) {
+return n >= 10 ? "Great, now move on to tricks" : "Keep at it until you get it"
+}
+
+function findDifference(a, b) {
+let A = a.reduce((acc,curr)=>acc * curr);
+let B = b.reduce((acc,curr)=> acc * curr);
+  return A - B >= 0 ? A-B : B-A;
+}
+
+function DNAtoRNA(dna){
+  return dna.replace(/T/g, 'U');
+}
