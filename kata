@@ -521,3 +521,13 @@ let B = b.reduce((acc,curr)=> acc * curr);
 function DNAtoRNA(dna){
   return dna.replace(/T/g, 'U');
 }
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function find_average(array) {
+  var sum = array.reduce((a, b) => a + b, 0);
+  return sum/array.length;
+}
+we want to return 0 if the array is empty, so we start at the 0 index and we do a + b. If its 0 our last return will be 0 / 0 so we are successful
+
+
+
