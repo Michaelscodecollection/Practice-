@@ -530,4 +530,17 @@ function find_average(array) {
 we want to return 0 if the array is empty, so we start at the 0 index and we do a + b. If its 0 our last return will be 0 / 0 so we are successful
 
 
+-----------------------------------------------------------------reviewing past katas now-------------------------------------------------------------------------------
+const maps=(x)=>{
+return x.map(x=>x * 2)
+}
+const areYouPlayingBanjo = (name) => {
+  return name[0] === 'r' || name[0] === 'R' ? `${name} plays banjo` : `${name} does not play banjo`;
+}
+const numbers = (...arr) => arr.every(x => typeof x === 'number')
+this one i actually almosty got perfectly but i forgot about the every method. stoaked because last time i didnt even get close
+
+const areaOrPerimeter = function(l , w) {
+ return l === w ? l * w : 2 * (l + w)
+};
 
