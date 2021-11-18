@@ -544,3 +544,58 @@ const areaOrPerimeter = function(l , w) {
  return l === w ? l * w : 2 * (l + w)
 };
 
+const animal=(obj)=>{
+  return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
+}
+
+function countPositivesSumNegatives(input) {
+  //so here i really like this code because it basically follows verbatim the instructions.
+  //its objective based code. 
+    if (input == null || input.length == 0)
+      return [];
+    // we begin with our basic parameters. if the input is null or the length of input is 0
+  // we return an empty array.
+    var positive = 0;
+    var negative = 0;
+    // we know we are looking for a count, so we create our count storage for positive and negative numbers
+  
+    for (var i=0, l=input.length; i<l; ++i)
+    {
+      if (input[i] > 0)
+        ++ positive;
+        //I also was not paying attention to the instructions. I keep doing this. I need to focus on what is being asked of me, I need to get back into the habit of pseudo coding
+        // im working with fundamentals and so I think im tough shit because of all of these one liners. Im not. Just because I know what to do and am excited doesnt mean i shouldnt take the time to processs what is 
+        //in front of me. 
+      else
+        negative += input[i];
+    }
+  //we use a basic for loop to organize which index will be sorted to which sum. 
+    
+    return [positive, negative];
+  // we place our counted values into an array and we return. 
+
+//okay i need to get better at deconstructing. im trying to be fancy and its not smart. I could have solved this one if i wasnt always trying to do one liners. I need to be more
+// aware of the fact that i need to learn to write good code. not impressive code. clean code. 
+function calculator(a,b,sign){
+ if ((typeof a == 'number') && (typeof b == 'number')){
+   switch(sign){
+       case '*':
+       return a * b;
+       break;
+       case '+':
+       return a + b;
+       break;
+       case '/':
+       return a / b;
+       break;
+       case '-':
+       return a - b;
+       break;
+   }
+  
+ }
+ return 'unknown value'
+}
+// I need to slow down and think of all the tactics i can approach problems with. I once again, thought i could just type out what was in my head and totally over complicated the code.
+switch statment would have been such an easy approach. at this point im being lazy and i know it. I need to be intentional, focued, and give the problem the respect it deserves.
+coding requires attention and focus. I cant just superfically think my way through this career. 
