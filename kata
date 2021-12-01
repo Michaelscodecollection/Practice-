@@ -599,3 +599,110 @@ function calculator(a,b,sign){
 // I need to slow down and think of all the tactics i can approach problems with. I once again, thought i could just type out what was in my head and totally over complicated the code.
 switch statment would have been such an easy approach. at this point im being lazy and i know it. I need to be intentional, focued, and give the problem the respect it deserves.
 coding requires attention and focus. I cant just superfically think my way through this career. 
+
+function between(a, b) {
+  //  we want to input 1 and 4 and get a returned value of 1,2,3,4.
+  //how can i go about doing this? 
+  //i can use a for loop. start i at 8, and make the iteration go until it is <= b.
+  // 
+  let arr = [];
+  for(let i=a; i <= b; i++){
+    arr.push(i)
+  }
+    return arr;
+  
+}
+function getAge(inputString){
+return parseInt(inputString)
+}
+
+function pipeFix(numbers){
+  var first = numbers[0];
+  var last = numbers[numbers.length-1];
+  // so here we create our first (starting point) and out last (ending point)
+  // we use the 0 index to locate our starting value and the -1 index to input our ending value.
+  var arr = [];
+  // we create an array to harness our final result
+  for(var i = first; i <= last; i++) {
+  // we then use our first and last values in a for loop and we increment through. we push the output of the for loop into our new array.
+    arr.push(i);
+  }
+  return arr;
+}
+//so we create our starting and ending point. then we just for loop from start to finish. I tried creating and replacing all the values which was way more work. I need to spend more time thinking 
+about what i need to do. Maybe i should start a timer. take one minute to not code at all and just think of my various approaches instead of just jumping on the first thing that makes sense. 
+
+function cost (mins) { 
+  return 30 + ( mins>65 ?  Math.ceil((mins-65)/30) : 0 )*10
+  // return 30 + if minutes is greater than 65 min ($30 for the first hour + 5 min grace period)
+  // then we do round up using Math.ceil. we do mins - 65/30. that number gets multiplied by 10
+  // and then is added to the total cost. I need to be better about picking out details like round
+  //up.
+  
+  function perimeterSequence(a,n) {
+  return a * n * 4
+ //over complicated it again. I need to slow down. I need to break down the problem even smaller then I am. there arent big chunks that im forgetting. 
+}
+
+//today is my first day moving onto 7 kyu and its been an adjustment 
+first off, I have to get used to the fact the code is going to be much longer moving forward. no more one liners. so when writing out the code, I have to really set up the playing
+//field im going to be working with. no more one liners. I need to write everything out and create all the variables im going to be working with. I also have to embrace the mantra
+of ' the first step to knowing is not knowing. ' 
+the last couple katas i did i made things a little more complicated than i needed too. I need to simplify but its not just that. I tried simplifying but my ignorance with different fundamentals
+of algebra is effecting my ability to problem solve. I need to make an investment in my understanding of algebra. 
+that being said, its time to break down the first big problem
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function add(num1, num2) {
+// so here we get our two numbers. now first thing i need to note is that one of the things we need to check for is for which numbver is greater, because if theres two numbers for 
+// one and theres three numbers for another, its gonna effect which number is being added to which number.
+
+    num1 = num1.toString().split("").reverse().join("");
+    num2 = num2.toString().split("").reverse().join("");
+    //so here we create our variables num1 and num2 exceot we create them in the context of solving the problem.
+    // we know that we need to turn the numbers into a string, split the number, reverse it, and join it back. this turns 200 into '002' and 60 into '06'
+
+ 
+
+    if (num1.length < num2.length) {
+        [num1, num2] = [num2, num1];
+    }
+// here we check for if num1.length is less than num2.length. 
+in the case that num1 is less than num2, our [num1,num2] array will instead be [num2,num1].
+ 
+
+    var returnString = "";
+    here we have our returning value which is going to be a string at first.
+    
+    for (var i = 0; i < num1.length; i++) {
+    // since we made the largest value num1, we are going to use a for loop to loop through these values. this is why we made our number a string.
+    
+        var int1 = parseInt(num1[i]);
+      // now we are going to turn our string into a number. int1 is going to be representing num1 iterations and int2 will be representing num2 iterations. 
+      
+        var int2 = parseInt(num2[i] || 0);
+      
+        returnString = (int1+ int2).toString()+returnString;
+        // now that we have the two integers defined as to being which ever num[i] we are on, we can loop through.
+        // we have int1 + int 2 turned into a string and placed next to which ever value was last created. 
+        so if we have 268 + 318 --> '862' + '813' --> 
+        8 + 8 === 16 --> returnString == '16'
+        6 + 1 === 7 --> returnString =='716'
+        3 + 2 === 5 --> returnString == '5716'
+        
+    }
+    
+    return parseInt(returnString);
+    //here we turn our '5716' into 5716 (String to Integer)
+}
+// my main mistake was not breaking it down more. I can make my life a lot more simple if I take the time to make create a map to my destination. 
+
+function arrowArea(a,b) {
+  // A = bh/2
+  //b = a
+  //h = b/2
+  let base = a;
+  let h = b/2;
+  return (base * h)/ 2
+}
+// followed my own advise for an A1 result
+
