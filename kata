@@ -761,3 +761,61 @@ function balancedNum(number) {
   let righttotal = rightside.split("").reduce((a,b)=>parseInt(a)+parseInt(b));
   return (lefttotal === righttotal) ? "Balanced" : "Not Balanced";
 }
+
+------------------------------------------------------------------------------------------------------------------------------------
+const bump=x=>x.split('n').length>16?"Car Dead":"Woohoo!"
+//so the split method is exactly what I was looking for when I was psuedo code. I knew that an optimal approach would be to cut out the 'n' and measure the length of that value.
+//Its pretty simple, we use x.split('n') which basically seperates everything from 'n'we then use.length to measure the x value which now only has its 'n' value. after that its just a 
+//basic ternary operator
+
+
+function add(num1, num2) {
+// first im going to turn the number into a string, split, reverse, and join.
+  //im going to do this so that when im adding the values in the end, it goes in order.
+  // im then going to make a conditional statment that will place the longest value 
+  //in the variable num1. this is for when im adding so that the correct amount of numbers get 
+  //looped through in the for loop.
+  //now I will create my String Container, which will hold the value of the final intger vallue
+  //after that I will make my for loop. this for loop with go for the length of num1 
+  //I will make int1 and int2, which will create the number values of the new reversed string. 
+  // now that the numbers have been flipped and made into an integer, I can add them. 
+  // I add int1[i] to int2[i] || 0 if there is not value. these are made into strings so that they are
+  //not added with each other but placed next to each other.
+  // now that i have the final string and the numbers have been placed next to each other, I can 
+  //return with a parseInt to make it into its final value
+  num1 = num1.toString().split('').reverse().join('')
+  num2 = num2.toString().split('').reverse().join('')
+  
+  if(num1.length < num2.length){
+     [num1, num2] = [num2, num1]
+  }
+  let returnString = ''
+  for (let i=0;i<num1.length; i++){
+    let int1 = parseInt(num1[i]);
+    let int2 = parseInt(num2[i] || 0);
+    
+    returnString = (int1 + int2).toString() + returnString;
+  }
+  return parseInt(returnString);
+}
+
+function cake(x, y){
+//x is going to be the value of the total amount of candles we have
+//y is going to be value of the candles that fall off,
+//y is going to be a string of letters what we want to translate to their ACSLL values/ alphabitical position value
+// even index will be targeted with ACLII values and odd with target their alphabitical position value. 
+//if the total value attained for the candles that fell of is greater then 70%, the carpet will catch on fire. 
+  let a = y.split("");
+  //first we split y so that we can target each individaul letter and we place that array in the variable 'a'.
+  let res = 0;
+  // we create our result container which will hold the final value of the accumulated values.
+  for (i in a){
+  //we use a for in loop. i represents the index, and in a represents every variable that is in the array 'a'
+    res += i % 2 == 0 ? a[i].charCodeAt(0) : a[i].charCodeAt(0) - 96;
+    // now we want to add to our res variable. we do this with a += 
+    // if i % 2 == 0, meaning its an even value, we want res to add its charcodeat value. if it is even we will take that value and subtract it by 96 to give us 
+    // its alphabitical position value for the odd indexes. all these values will be added together for our final result.
+  }
+  return res > x * 0.7 ? 'Fire!': 'That was close!';
+  //here we will use a ternery return statment. If res is greater than x(total candles) * 0.7 (70%) we will return 'Fire!' otherwise it will be 'The was close!'
+}
