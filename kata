@@ -819,3 +819,38 @@ function cake(x, y){
   return res > x * 0.7 ? 'Fire!': 'That was close!';
   //here we will use a ternery return statment. If res is greater than x(total candles) * 0.7 (70%) we will return 'Fire!' otherwise it will be 'The was close!'
 }
+
+function iceBrickVolume(radius, bottleLength, rimLength) {
+  // variables at play:
+  // radius- mid point of brick to bottle edge
+  //bottleLength- total length of the bottle (height)
+  // rim length - length from bottle top to brick.
+  // what do I know? bottleLength - rimLength = brick height.
+  //volume of the rectangle will be length times width times height
+  let length = bottleLength - rimLength;
+  let width = radius * 2;
+  let height = width;
+  return (length * width * height)/ 2;
+ 
+}
+const uniTotal = str => [...str].reduce((acc, char) => acc + char.charCodeAt(0), 0);
+//this one is my favorite. while i will admite i forgot about th use of a spread operator, I did create a new array. when I was writing things out i decided to go with a manp 
+//method, which would have worked, but I was missing the reduce method. encourging nonetheless. 
+
+
+const uniTotal = ($) =>{
+  //I want to take the string and split it.
+  // I need a container for the values. 
+  // im going to go through each value and translate it to its ASCII number using 
+  //char
+return [...$].reduce((acc, char) => acc + char.charCodeAt(0),0)
+}
+
+
+
+
+
+
+
+
+
