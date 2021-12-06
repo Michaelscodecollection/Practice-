@@ -88,6 +88,8 @@ const checkExam = (array1, array2) => {
       else if(answer == 0) return score += 0;
       else return score - 1;
     }
+    
+    
   , 0);
   return result < 0 ? 0 : result;
   
@@ -885,4 +887,55 @@ const areaOrPerimeter = function(l , w) {
 
 const getNames = (data) => {
   return data.map(x => x.name)
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+function isCoprime(x, y){
+    var factorsX = [];
+    var factorsY = [];
+    // I had the great instnct of creating arrays to push info in. and I thought up the same idea for the for loop being set to x. all super exciting. I feel like my brain is starting to 
+    //see what it needs too. Im starting to trust my intuitions. at this point i just need to refine with trial and error. 
+    var gcf = 1;
+    // create a variable to contain the greatest common factor (for conditional reasoning.)
+    for (var i = 2; i <= x; i++) {
+    Here i create my for loop using x as my set loops and I set the starting point for the loop at 2 because I know 1 will be the GCF and im looking for all the numbers except for 1
+    
+        if (x % i === 0) {
+        // here i set my first conditional. If x % the current iteration is === 0, im gonna push that number into out x array. 
+        factorsX.push(i);
+        }
+    }
+    for (var i = 2; i <= y; i++) {
+    // here i set the next for loop, which is the same as before but for all of the y values. 
+        if (y % i === 0) {
+        factorsY.push(i);
+        }
+    }
+    for (var i = 0; i < factorsX.length; i++) {
+        for (var j = 0; j < factorsY.length; j++) {
+        if (factorsX[i] === factorsY[j]) {
+            gcf = factorsX[i];
+            // now I create the for loop that will compare the two arrays. im gonna set this for loop = to factorsX.length
+            //within that for loop we are going to have another for loop that will scan the factors for Y.length. 
+            // if when searching the two for loops we find a common number, we are going to set gcf = to factorsX[i] or that particular iteration.        }
+        }
+    }
+    if (gcf === 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+  //make it increment up to the highest number. I can push each iteration into an array.
+  // after that I can reduce the array. 
+  let arr = [];
+  if(a > b){
+  [a, b] = [b, a];
+    }
+  for (let i = a; i <= b; i++){
+    arr.push(i)
+  }
+  return arr.reduce((a,b)=> a + b);
+  
 }
