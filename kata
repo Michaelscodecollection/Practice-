@@ -847,10 +847,39 @@ return [...$].reduce((acc, char) => acc + char.charCodeAt(0),0)
 }
 
 
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
 
+function remainder(a, b){
+  return a > b ? a % b : b % a;
+}
 
+function countSheeps(arrayOfSheep) {
+  
+  // Im going to be searching an array, so that means a for loop/ map method is probably going to be
+  // the best option. I need to iterate over each index. if that index is present, I need to add
+  // it to my count. 
+  // I could use a for loop, if statment, and count variable
+  // I could also filter out the false values and then count the length of the remaining array.
+  // I could probably map and use a count variable as well.
+  //the cleanest option seems to be the filter method so Im going to pursue that. 
+  // -------------------------------------------
+  // filter strategy 
+  return arrayOfSheep.filter(x => x === true).length 
+}
 
+const stringToNumber = (str) => {
+  return parseInt(str)
+}
 
+const uniTotal = str => [...str].reduce((acc, char) => acc + char.charCodeAt(0), 0);
+// okay so I was on the right track with this one. I used split instead of a spread operator. 
+// what they did here was turn the str into a spread operator array. we then reduced that array. we only used the CharCodeAt(0)(0 standing for the 0 index) 
+// acc does not need the charCodeAt method because its just the accumulation of tthe current indexs. each curr is translated to its ASCII value and then added to the accumnulated value
+I was on the nose about using the reduce method and charCodeAt method. My execution lacked the spread operator. 
 
-
+const areaOrPerimeter = function(l , w) {
+  return l === w ? l * w : 2 * (l + w);
+};
 
