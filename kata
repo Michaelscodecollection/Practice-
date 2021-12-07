@@ -939,3 +939,17 @@ function isCoprime(x, y){
   return arr.reduce((a,b)=> a + b);
   
 }
+function getDecimal(n){
+  // so im going to be given a number positive or negative. I need to take only the decimal
+  //and return that decimal in the format of 0.decimal. 
+  // my first instince is to split it at the decimal into two seperate variables while also.
+  //making it a string. 
+  // i will declare a variable that and place a string in that variable. the string will be '0.' 
+  //once ive seperated i will take the integer representing the decimal and set the new string 
+  //  newString = newSting + decimalNumber
+  //then i will parseInt().
+   let finalString = '0.'
+   let [a,b] = n.toString().split('.')
+  finalString = finalString + b;
+return (parseFloat(finalString))
+  
