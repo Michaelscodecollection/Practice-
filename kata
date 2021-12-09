@@ -953,3 +953,69 @@ function getDecimal(n){
   finalString = finalString + b;
 return (parseFloat(finalString))
   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function cake(x, y){
+// if the number of candles fallen is 70% of the total candles the carpet will catch on fire.
+  // im going to get a string. I need to add up the string using ASCII values for even indexes 
+  // and alphabitical position values for the odd indexes. 
+  // if the carpet catches fire return ' fire ' , else return 'that was close!'
+  // okay so I know im going to need charCodeAt() for odd values and charCodeAt()-96 for the
+  //alphabitical position
+  // x will be the total number of candles
+  // x * 0.7 will equal 70% of the total amount of candles. 
+  // im going to need to split y, and create conditionals based off of the value of each index number
+  // if i % 2 === 0 return index[i] === charCodeAt()-96 else index[i] === charCodeAt()
+  //for searching through I can use map or a for loop. 
+  // after the values have been set, Im going to reduce the array.
+  // I think I may have to create a new array and push the values in, but thatll be a little messy so
+  // in an attempt to be cleaner, ill try to avoid this route starting off. 
+  // I may be able to use a ternary operator in map. Ill start out with the for loop and 
+  //remember this should I want to refactor after. 
+  let fireHazard = x * 0.7;
+  let even = [];
+  let odd = [];
+  for(let i=0; i<y.length; i++){
+    if(i % 2 === 0){
+      even.push(y[i].charCodeAt()-96);
+      
+    }else{
+      odd.push(y[i].charCodeAt())
+      }
+    
+  }
+  let finalEven = even.reduce((acc,curr)=> acc + curr);
+  let finalOdd = odd.reduce((acc,curr)=> acc + curr)
+  let totalFallin = finalEven + finalOdd;
+  return totalFallin > fireHazard ? 'Fire!' : 'That was close!';
+  
+}
+function singleDigit(n) { 
+  
+  return n < 10 ? n : singleDigit([...n.toString(2)].reduce((a, b) => a + +b, 0)) 
+}
+//so here I was actually on the right track I just didnt order my variables correctly. I use a ternary operator to determine if n is a single digit. If n is, i return n. if it isnt
+//im going to call the singleDigit function and inside that function im going to turn n into a array with a spread operator, make it binary with the toString(2), reduce
+
+--------
+
+function zombie_shootout(zombies, range, ammo) {
+  const steps = range * 2;
+  //so here i did not think about the total amount of steps. I forgot that range was 0.5 and that to get the total amount of steps for the for loop i qwou;d have to multiply by 2.
+  // the for loop increments by 1, So if i wanted to for loop to go for the amount of steps being taken I would have to multiply by one to give the proper amount of time
+  if (ammo < steps && zombies > ammo) {
+    return `You shot ${ammo} zombies before being eaten: ran out of ammo.`;
+    //basic if statement. here they addressed the numbers as they were inputted. Which makes more sense. I was coming at it from a wierd angle now that I think of it. 
+    // I was trying to address the metrics as they changed which is way less effecinet. I also made it a race to 0. depending on which metric reached 0 first I would respond.
+    //which honestly, what the hell was I thinking. Here they just took the logic presented to them, took the numbers presented to them, and wrote their code. they had a direct translation
+    //while mine was abstract and wierd. while I like to be abstract in my approach to play more with the code I have, this was blatantly stupid. They didnt even use a for loop. 
+   // like what the hell
+  }
+  
+  if (zombies > steps) {
+    return `You shot ${steps} zombies before being eaten: overwhelmed.`;
+  }
+
+  return `You shot all ${zombies} zombies.`;
+}
+I need to break the logic down more. try and see whats right in front of me.
+
