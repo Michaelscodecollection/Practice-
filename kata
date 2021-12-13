@@ -1024,3 +1024,30 @@ function solution(A) {
     if(!A.includes(i)) return i;
   }
 }
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+const solution = (message, K) => {
+    // limit = k
+    // we want to splice, slice, or cut any digits that are not within
+    //the length of K. 
+    //it cant crop out part of a word. meaning- if the limit reaches
+    //the length of k, that word will be taken out. so maybe if( not length ) split(' ') 
+    // firstly, I should determine if the length is less then k.length 
+    // because then I can just return the message. this is if else. 
+    //so I know im going to need to check the length, scan the text to determine the length. if the length is greater than k, i can split the words into an array and pop until the length is less than k. once the length is less than k, I can join(' ') and return
+    let textLength = message.length;
+
+    if(textLength < K){
+        return message;
+    }else{
+        let wordCount = message.split(' '),substr; 
+        for(let i=wordCount.length;i>0;i--){
+            wordCount.pop();
+if(wordCount.join(' ').length < K){
+    return wordCount.join(' ')
+}
+        }
+    }
+}
