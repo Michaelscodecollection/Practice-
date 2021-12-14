@@ -1051,3 +1051,48 @@ if(wordCount.join(' ').length < K){
         }
     }
 }
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+//----------------------thought map to begin ----------------------
+
+    // write your code in JavaScript (Node.js 8.9.4)
+    // Start with N cars
+    //There is a starting number of people and seats.
+    // they are car pooling and they want to use as little cars as possible. 
+    //so S are the total seats, P the total people.
+    // we need to determine how many seats are to a car..
+    //maybe we can sort the cars based on the cars with the most seats and
+   // so P[i] and S[i] represent K[i](car).
+   // so P[1] and S[4] represents 1 person driving a car with 4 seats.// P[2] S[4] represents two people driving in K car which has 4 cars
+   // so im going to want to add up P.
+   // then sort S from largest to smallest. 
+   // let seats available
+   //maybe I make a for loop that adds cars until S >= P
+   // each index of S would represent the amount of cars being used. 
+   // create carCount variable
+   //  so if S >= P car
+   //  carcount += 1
+    // i may actually just have to sort the S from greatest to least.
+    //do a for loop that += seating until it is >= people. 
+    //so each iteration would add the current indexs S to a occupiedSeating variable, upon the next interation, I would check if >= P, if the next iteration begins, we add that to the car count.
+    const solution = (P, S) => {
+ let totalSeating = S.reduce((acc,curr)=> acc + curr);
+ console.log(totalSeating)
+ let totalPeople = P.reduce((acc,curr)=> acc + curr);
+ let carPool = S.sort((a,b)=> b-a);
+ console.log(carPool);
+ let carCount = 0;
+ let occupiedSeats = 0;
+ for (let i=0; i<carPool.length; i++){
+//okay. if occupiedSeats <= totalPeople we add carPool[i] to
+//occupiedSeats and increase carCount += 1 for the iteration.
+if (occupiedSeats <= totalPeople){
+     occupiedSeats += carPool[i];
+     carCount += 1;
+
+ }
+}
+return carCount;
+    }
