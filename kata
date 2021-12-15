@@ -1096,3 +1096,18 @@ if (occupiedSeats <= totalPeople){
 }
 return carCount;
     }
+
+
+function calc(x){
+  let sum = n => [...n].reduce((a,b) => +a + +b);
+  //here we create our sum paramaters. we make sum a function that takes n, creates an array with a spread operator, and we reduce all integers make it all integers positive
+  
+  let total1 = x.replace(/./g, x => x.charCodeAt(0));
+  // we create our total1 value by replacing the string with their charCodeAt() values
+  let total2 = total1.replace(/7/g,'1');
+  // here we have our total2 value which we define as being total1 with our 7 replaced for 1
+  return sum(total1) - sum(total2);
+  we run both values through our sum function and return the difference
+}
+
+//I need to remember that anytime im dealing with an array, I can use regex and the replace function. I keep trying to make things complicated. 
