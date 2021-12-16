@@ -1111,3 +1111,51 @@ function calc(x){
 }
 
 //I need to remember that anytime im dealing with an array, I can use regex and the replace function. I keep trying to make things complicated. 
+
+
+function peak(arr) {
+  let res = -1;
+  
+  for (let i = 0; i < arr.length; i++) {
+  //so here we basically create a ternary. if the sums of both sides do not add up to the same we are just going to return our -1 value. 
+  we create a for loop
+    if (arr.slice(0, i).reduce((acc, cur) => acc + cur, 0) 
+      === arr.slice(i + 1).reduce((acc, cur) => acc + cur, 0)) {
+        res = i;
+        // if the values from 0-i reduced === the values from slice(i + 1) (which startes slicing backwards) then we set res === to i
+        
+        //so we create our initial value for res, whihc is -1. we then go to create a for loop. in that for loop we will have an if statement. that if statment says that
+        //if the begging index sum is === to the end index, we will set res = to that index. its very incremental. each sum is made for each iteration. (0-1, 0-2, 0-3) compared to
+        // -1, -2, -3
+    }
+  }
+  
+  return res;
+}
+
+
+function getEvenNumbers(numbersArray){
+  // filter out the odd numbers
+  return numbersArray.filter(x => x % 2 === 0);
+}
+
+function wallpaper(l, w, h) {
+    // width of rolls is 52 centimeters
+  // length of the role is 10 meters
+  // total length purchased must be 15% larger than length required
+  // l w h is representing the room we are trying to fill.
+  // I think i need to calculate the area of the room
+  // then i need to divide the area by the rolls.
+  // i need to multiply combined width by the hright
+  let numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve","thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
+  
+  let areaOfRoom = 2 * (l+w)*h;
+  let wallpaperRoll = 0.52 * 10;
+  let numberOfRolls = (areaOfRoom / wallpaperRoll);
+  
+  let totalRolls = Math.ceil(numberOfRolls * 1.15);
+  
+    return l = 0 ? 0 : (numbers[(totalRolls)])
+
+  
+}
