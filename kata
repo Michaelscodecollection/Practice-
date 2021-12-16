@@ -1159,3 +1159,51 @@ function wallpaper(l, w, h) {
 
   
 }
+
+function adjacentElementsProduct(array) {
+// Okay so im looking for the greatest product of two numbers. 
+  //these numbers have to be adjacent to each other
+  // Im gonna need a for loop
+  // im gonna multiply array[i] by array[i+1]
+  //im gonna use a basic for loop/ 
+  let Greatest = 0;
+  
+  for(let i=0; i<array.length; i++){
+    let multiply = array[i] * array[i + 1];
+    if(multiply > Greatest){
+      Greatest = multiply;
+      console.log(array, multiply)
+    }
+  }
+  return Greatest
+  }
+  
+  function reverseBits (n) {
+   let flip = n.toString(2).split('').reverse().join('');
+   let conversion = parseInt(flip, 2);
+  return conversion
+}
+
+
+function sharedBits(a, b) {
+  return a & b & (a & b) - 1 ? true : false;  //  from Python solution by Mercy Madmask
+}
+//I didnt realize you can just use && statments on their own for true false returns. this is interesting. 
+function sharedBits(a, b) {
+// so im going to convert a and b into binary
+  // im going to search the binary integers. if more that two indexes match, i will
+  //return true
+  let bin1 = a.toString(2);
+  let bin2 = b.toString(2);
+  if(bin1.length < bin2.length){
+  [bin1, bin2] = [bin2, bin1]
+  }
+  let bitCount = 0
+  for(let i=0; i< bin1.length; i++){
+    if(bin1[i] === '1' && bin2[i] === '1'){
+      bitCount += 1
+    }
+  }
+  return bitCount >= 2 ? true: false;
+}
+
