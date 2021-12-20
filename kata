@@ -1207,3 +1207,35 @@ function sharedBits(a, b) {
   return bitCount >= 2 ? true: false;
 }
 
+function correctness(bobsDecisions, expertDecisions) {
+  return bobsDecisions
+    .map((x,i) => x == expertDecisions[i] ? 1 : x == '?' ? 0.5 : expertDecisions[i] == '?' ? 0.5 : 0)
+    .reduce((a,b)=>a+b, 0);
+}
+
+function correctness(bobsDecisions, expertDecisions) {
+// so it looks like i will be comparing bobs and the experts decisions. 
+  // I will need a count variable which will increase one if his and the experts opinion are
+  //equal/ if they disagree, but the disagreement comes with '?' thats 0.5 points. 
+  // if there they are not equal, then 0 points. 
+  let count = 0;
+  for(let i=0; i<bobsDecisions.length; i++){
+if(bobsDecisions[i] === expertDecisions[i]){
+count += 1;
+}else if(bobsDecisions[i] != expertDecisions[i] && bobsDecisions[i] == '?' || expertDecisions[i] == '?' ){
+  count += 0.5;
+}
+  }
+  return count
+}
+
+function correctness(bobsDecisions, expertDecisions) {
+  console.log(bobsDecisions
+    .map((x,i) => x == expertDecisions[i] ? 1 : x == '?' ? 0.5 : expertDecisions[i] == '?' ? 0.5 : 0)
+//     .reduce((a,b)=>a+b, 0)););
+              //so map creates a new arrays with the values. if x = i that index will have a 
+              // value of 1. we get those values and then we reduce
+              );
+}
+// okay so my intuition to use map was correct. looks like i use i => x 
+//if x === expertdecisions[i] 
