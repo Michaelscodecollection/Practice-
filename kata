@@ -1239,3 +1239,15 @@ function correctness(bobsDecisions, expertDecisions) {
 }
 // okay so my intuition to use map was correct. looks like i use i => x 
 //if x === expertdecisions[i] 
+
+
+  const stantonMeasure = (bitch) =>{
+   let bitchinArray = bitch.map((x,i) => x == 1 ? 1 : 0).reduce((acc,curr)=>acc + curr)
+   return bitch.map((x,i)=> x==bitchinArray ? 1 : 0).reduce((acc,curr)=>acc +curr);
+  }
+
+
+function stantonMeasure(arr) {
+  const count = n => arr.filter(x => x === n).length;
+  return count(count(1));
+}
