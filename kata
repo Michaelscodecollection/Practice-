@@ -1251,3 +1251,8 @@ function stantonMeasure(arr) {
   const count = n => arr.filter(x => x === n).length;
   return count(count(1));
 }
+=--------------------------------------------------------------------------------------------------------------------------------------
+function abbrevName(name){
+return name.split(' ')[0][0].toUpperCase() + '.' + name.split(' ')[1][0].toUpperCase()
+
+}
