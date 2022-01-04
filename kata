@@ -1256,3 +1256,19 @@ function abbrevName(name){
 return name.split(' ')[0][0].toUpperCase() + '.' + name.split(' ')[1][0].toUpperCase()
 
 }
+
+function pipeFix(numbers){
+//input list of numbers
+  let arr = [];
+  for(let i=Math.min(...numbers); i<Math.max(...numbers) + 1; i++){
+    arr.push(i)
+  }
+  return arr;
+  console.log(Math.min(...numbers));
+}
+
+function countSheeps(arrayOfSheep) {
+  let count = 0
+  arrayOfSheep.map(x => x == true ? count += 1 : console.log());
+  return count;
+}
