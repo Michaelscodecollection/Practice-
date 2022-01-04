@@ -1272,3 +1272,18 @@ function countSheeps(arrayOfSheep) {
   arrayOfSheep.map(x => x == true ? count += 1 : console.log());
   return count;
 }
+function cookingTime(eggs) {
+  // 8 egg in 1 group
+  //1 group takes 5 min
+  // input order, output expected time
+  //take order, divide it by 8, this will give me the amount of groups I have to
+  // cook. round group up to the nearest whole number and then multiply by 5. 
+  let groups = eggs / 8;
+  
+  let rounds = Math.ceil(groups);
+  return rounds * 5
+}
+
+function incrementer(num) { 
+  return num.map((a,i) => (a+i+1)%10);
+}
