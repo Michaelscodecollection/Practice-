@@ -1287,3 +1287,25 @@ function cookingTime(eggs) {
 function incrementer(num) { 
   return num.map((a,i) => (a+i+1)%10);
 }
+
+function smallEnough(a, limit){
+  let occurance = 0;
+ a.map(x => x <= limit ? x : occurance += 1)
+ return occurance > 0 ? false : true;
+}
+
+function well(x){
+  let count = 0;
+for(let i=0; i<x.length;i++){
+if(x[i] == 'good'){
+  count += 1;
+}
+}
+  if(count <= 2 && count > 0){
+    return 'Publish!'
+  } else if( count > 2){
+return 'I smell a series!'
+  }else{
+    return 'Fail!'
+  }
+  }
