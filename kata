@@ -1332,3 +1332,5 @@ function pairZeros(arr) {
 function duplicateElements(m, n) {
   return m.some(v => n.includes(v))
 }
+
+//some is an awesome method i need to keep in my roledex. its like map in which it maps through the array, but it tests if a function/parameters are true or not
