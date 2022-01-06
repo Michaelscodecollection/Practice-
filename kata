@@ -1359,3 +1359,6 @@ exists in MATCH, but not within the winning matrix
   return MATCH[pl1].indexOf(pl2) >= 0 ? 'Player 1 Won!' :
          MATCH[pl2].indexOf(pl1) >= 0 ? 'Player 2 Won!' : 'Draw!';
 }
+function solve(arr){
+    return arr.filter((val,i) => arr.lastIndexOf(val) == i);
+}
