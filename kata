@@ -1334,3 +1334,28 @@ function duplicateElements(m, n) {
 }
 
 //some is an awesome method i need to keep in my roledex. its like map in which it maps through the array, but it tests if a function/parameters are true or not
+
+const MATCH = {
+// create parameters for winning
+  scissors: ['paper', 'lizard'],
+  // scissors beats paper and lizard
+  paper: ['rock', 'spock'],
+  //paper beats rock and spock
+  rock: ['lizard', 'scissors'],
+  //rock beats lizard and scissors
+  lizard: ['spock', 'paper'],
+  //lizard beats spock and paper
+  spock: ['scissors', 'rock'],
+  //spock beats scissors and rock
+};
+
+
+function rpsls(pl1, pl2) {
+//here we have our return function
+//we use our MATCH array and indexOf method to determine if there is a match to pl1's answer victory matrix. if pl2 has an answer that corresponds with what is in
+// the victory matrix of pl1, the indexOf method will return 1. if not it will return -1. if the returning value is 1, meaning that pl2's answer, matches with a losing value of pl1
+// then pl1 wins, if the value of pl1 value likewise matches with a value in pl2 winning matrix, then pl2 wins, if the value returns is not less than or = 0, then we have a draw, meaning that the value
+exists in MATCH, but not within the winning matrix
+  return MATCH[pl1].indexOf(pl2) >= 0 ? 'Player 1 Won!' :
+         MATCH[pl2].indexOf(pl1) >= 0 ? 'Player 2 Won!' : 'Draw!';
+}
