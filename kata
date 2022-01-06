@@ -1361,4 +1361,7 @@ exists in MATCH, but not within the winning matrix
 }
 function solve(arr){
     return arr.filter((val,i) => arr.lastIndexOf(val) == i);
+    // so the goal of this problem was to filter out duplicates. so we use the filter method obviously. in the filter method we are able to have two parameters, the value being passed
+    // and the index number. we the use the lastIndexOf method which is the just like indexOf but reversed. the current index enters the function under the name of val, then a 'for loop'
+    like process checks wheather that value exists in the array and checks if it is == to the current index. if it is equal then it gets filtered out from the new array
 }
