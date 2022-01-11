@@ -1365,3 +1365,11 @@ function solve(arr){
     // and the index number. we the use the lastIndexOf method which is the just like indexOf but reversed. the current index enters the function under the name of val, then a 'for loop'
     like process checks wheather that value exists in the array and checks if it is == to the current index. if it is equal then it gets filtered out from the new array
 }
+
+function oddOrEven(n) {
+  let count = 0;
+  for(let i=0; i<n;i++){
+    count += i+1;
+  }
+  return count % 2 == 0 ? 'Even' : count == 1 || count == 0 ? 'Either' : 'Odd'
+}
