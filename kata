@@ -1373,3 +1373,60 @@ function oddOrEven(n) {
   }
   return count % 2 == 0 ? 'Even' : count == 1 || count == 0 ? 'Either' : 'Odd'
 }
+function add(num1, num2) {
+// first im going to turn the number into a string, split, reverse, and join.
+  //im going to do this so that when im adding the values in the end, it goes in order.
+  // im then going to make a conditional statment that will place the longest value 
+  //in the variable num1. this is for when im adding so that the correct amount of numbers get 
+  //looped through in the for loop.
+  //now I will create my String Container, which will hold the value of the final intger vallue
+  //after that I will make my for loop. this for loop with go for the length of num1 
+  //I will make int1 and int2, which will create the number values of the new reversed string. 
+  // now that the numbers have been flipped and made into an integer, I can add them. 
+  // I add int1[i] to int2[i] || 0 if there is not value. these are made into strings so that they are
+  //not added with each other but placed next to each other.
+  // now that i have the final string and the numbers have been placed next to each other, I can 
+  //return with a parseInt to make it into its final value
+  num1 = num1.toString().split('').reverse().join('')
+  num2 = num2.toString().split('').reverse().join('')
+  
+  if(num1.length < num2.length){
+     [num1, num2] = [num2, num1]
+  }
+  let returnString = ''
+  for (let i=0;i<num1.length; i++){
+    let int1 = parseInt(num1[i]);
+    let int2 = parseInt(num2[i] || 0);
+    
+    returnString = (int1 + int2).toString() + returnString;
+  }
+  return parseInt(returnString);
+}
+
+function compare(s1, s2) {
+  if (/^\D+$/gi.test(s1) && /^\D+$/gi.test(s2))
+    return s1.split('').map(n => n.toUpperCase().charCodeAt()).reduce((a, b) => a + b) === 
+           s2.split('').map(n => n.toUpperCase().charCodeAt()).reduce((a, b) => a + b);
+  return true;
+}
+
+var FilterString = function(value) {
+  console.log(value)
+  let newVal = value.split('')
+  console.log(newVal)
+ let arr = newVal.map(x => x.charCodeAt())
+ 
+  arr = arr.filter(x => x <= 57);
+  let final = arr.map(x => x-48);
+  final = final.join('')
+   let theReturn = parseInt(final)
+   return theReturn
+}
+
+function filterLongWords(sentence, n) {
+let arr = [];
+  sentence = sentence.split(' ')
+  sentence.map(x => x.length > n ? arr.push(x) : console.log('bitch'));
+  console.log(arr)
+  return arr
+}
