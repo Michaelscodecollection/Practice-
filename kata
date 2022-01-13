@@ -1438,3 +1438,6 @@ function multiplyAndFilter(array, multiplier){
 }
 
 makeUnique=a=>[...new Set(a)]
+function filterEvenLengthWords(words) {
+  return words.filter(s=>s.length%2===0)
+}
