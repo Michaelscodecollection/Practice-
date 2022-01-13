@@ -1430,3 +1430,11 @@ let arr = [];
   console.log(arr)
   return arr
 }
+
+function multiplyAndFilter(array, multiplier){
+  console.log(array, multiplier)
+ let arr = array.filter(x => typeof(x) === 'number')
+  return arr.map(x => x * multiplier)
+}
+
+makeUnique=a=>[...new Set(a)]
