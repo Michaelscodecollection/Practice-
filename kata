@@ -1441,3 +1441,212 @@ makeUnique=a=>[...new Set(a)]
 function filterEvenLengthWords(words) {
   return words.filter(s=>s.length%2===0)
 }
+function gridMap(fn,a) {
+
+  console.log(fn)
+
+  // so im going to recieve a function and im ggoig to recieve an array. 
+
+  // I want my code to take the array and map it using the given 
+
+  //function. so the return value is the array with the function applied
+
+  return a.map(x => x.map(fn))
+
+// I wanted to apply a function to each array. So i map out the two arrays and in then map out the individual values which i then use to apply the function
+
+}
+
+
+
+stringMerge = (a, b, l) => a.slice(0, a.indexOf(l)) + b.slice(b.indexOf(l));
+
+// so we are using the slice method. this was my first instinct honestly.
+
+// i knew i would slicei just didnt know how to target the variabled index
+
+// so with the syntax and the 'a' variable, we use the slice method
+
+//to start at the zero index, which is the starting point, and we end at a.indexOf(l)
+
+// indexOf returns the index value of the determined value. 
+
+// so we do 0-indexOF + b.slice(start at the indexOf (the letter value))
+
+//slice grabs the start and if the end isnt determined it grabs from start to finish. 
+
+
+
+function inverseSlice(items, a, b) {
+
+  console.log(items, a, b)
+
+  let  index1 = items.slice(0, a);
+
+  let index2 = items.slice(b)
+
+  console.log(index1, index2)
+
+  return index1.concat(index2)
+
+
+
+function scrollingText(text){
+
+  let result = []
+
+  
+
+  for( var i = 0; i < text.length; i++){
+
+    result.push((text.slice(i) + text.slice(0,i)).toUpperCase())
+
+  }
+
+  
+
+  return result
+
+}
+
+
+
+// so i had the right idea, i created a containter array
+
+// my execution was just slightly off. I failed to use each index as the base of 
+
+// probable combinations.   here i use text.slice(i). each index will
+
+// change the outcome. the text doesnt change so we use 0 as the anchor
+
+// we then use the index to rearrange what we are able to use.
+
+// so we start from the index we currently are on. becuase we dont define 
+
+// an end, it grabs from the i- end. we then add a slice from 0-i, which
+
+// grabs the index values that are currently missing.
+
+
+
+function remove(s){
+
+  console.log(s.split('!'))
+
+  return s.split(' ').filter(i => i.split('!').length != 2).join(' ');
+
+  // so im going to take the string, split itby the spaces. this
+
+  // will seperate the words into an organized array of strings.
+
+  // im then going to filter out the array. each word will be 
+
+  // i. the word will be split at the !, this will create a new array.
+
+  // i the array length does not = 2, that means it passes the test and can 
+
+  // be returned in our final result. I was thinking about how to count
+
+  // '!' but i failed to look more abstractly. the split creates a new index
+
+  // for every '!' which if i then use .length method, I am able to count
+
+  // the amount of exclamation points in an array. I then join with a space for the final
+
+  //product.
+
+  
+
+}
+
+
+
+function solution(nums){
+
+if(nums === null){
+
+  console.log('bitch')
+
+  return []
+
+}else{
+
+  console.log('bitch boi')
+
+ return nums.sort((a,b)=> a-b)
+
+}
+
+
+
+function scoreTest(str, right, omit, wrong){
+
+  console.log(str, right, omit, wrong)
+
+  let sum = 0;
+
+for(let i=0; i<str.length; i++){
+
+  if(str[i] === 0){
+
+    sum += right;
+
+  }else if(str[i] === 1){
+
+    sum += omit
+
+  }else if(str[i] === 2){
+
+    if(wrong > 0){
+
+      sum -= wrong
+
+    }else{
+
+      sum += wrong
+
+    }
+
+  }
+
+  
+
+}
+
+  return sum
+
+}
+
+
+
+function accum(s) {
+
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+
+  //so we start off by splitting the string. we then map it out using two parameters
+
+  // c and i. c will act as the varable for the value of each index and i
+
+  // will be the index value.we know we want the first index to be upper
+
+  // case. I wasnt looking at the return the right way. i need to create
+
+  // the solution in my code. this is an axample of that. i feel like
+
+  // instead of that im trying to output a solution instead of creating one.
+
+  // so i should ask myself in the future if i am able to just create
+
+  // the solution. so i map it out. the first value is upper case so i use the 
+
+  // toUpperCase() method. this is where i create the repeating value.
+
+  // the repeating value has to be lower case. so i use c.toLowerCase().repeat(i) and then I join
+
+  // the values in the array with a '-'
+
+  
+
+  
+
+}
