@@ -1668,3 +1668,11 @@ const removeConsecutiveDuplicates = s => {
 function sumOfMinimums(arr) {
   return arr.map(x => Math.min(...x) ).reduce((ore, curr)=> ore+ curr)
 }
+
+function largestPairSum (numbers) {
+  let find = numbers.sort((a,b)=> b-a)
+  let [a,b] = [find[0], find[1]]
+  let arr = [a,b]
+  return arr.reduce((pre,curr)=> pre + curr)
+  
+}
