@@ -1650,3 +1650,17 @@ function accum(s) {
   
 
 }
+
+const removeConsecutiveDuplicates = s => {
+  let returnarr = [];
+  let array = s.split(' ')
+  
+  array.map(x => !returnarr.includes(x) ? returnarr.push(x) : console.log('bitch boi', returnarr))
+  return returnarr
+  }
+  
+  const removeConsecutiveDuplicates = s => s.split(" ").filter((x,i,arr) => x!=arr[i-1]).join(" ");
+// so i was on the right track with this one. i even thought about the filter option. i just didnt check the third parameter, which honestly looks super useful. 
+// when you use the filter method, you automatically know youre dealing with an array. the third parameter allows you to compare the tested variable with the other contents 
+// of the array. so the code reads as this --> we split the string and then filter,  we use the x for each element, i for the index, and arr for the array. if x does not = arr[i - 1] 
+// (i didnt realize the the filter method keeps up with x index despite it not being mentioned before, which is cool) then we want it filtered out. after the filtration process we want to join it.
