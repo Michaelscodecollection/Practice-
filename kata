@@ -1676,3 +1676,7 @@ function largestPairSum (numbers) {
   return arr.reduce((pre,curr)=> pre + curr)
   
 }
+function flattenAndSort(array) {
+ 
+  return [].concat(...array).sort((a,b) => a-b)
+}
