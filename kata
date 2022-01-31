@@ -1680,3 +1680,40 @@ function flattenAndSort(array) {
  
   return [].concat(...array).sort((a,b) => a-b)
 }
+
+function countDevelopers(list) {
+  let count = 0;
+  for(let i=0; i<list.length; i++){
+    
+    if(list[i].language === 'JavaScript' && list[i].continent === 'Europe'){
+      count ++
+    }
+  }
+  return count
+}
+
+function countDevelopers(list) {
+  return list.filter(x=>x.continent=='Europe'&&x.language=='JavaScript').length
+  // okay so They used filter to create a new array that only contained an object that passed the test of having europe and javascript. to return the number value, we used
+  // length, which honestly i thought about doing but I thought it would be more complicated. I should have pursued this more because I think its creative and fun. 
+}
+
+function greetDevelopers(list) {
+  list.forEach(function(developer) {
+    developer.greeting = `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`;
+  });
+  
+  return list;
+}
+// so I use dot notation to add an element to an object in the array. I do this using the forEach method which allows me to manipulate each element in the array. 
+
+function isRubyComing(list) {
+  return list.filter(x => x.language === 'Ruby').length >= 1 ? true : false;
+}
+or
+function isRubyComing(list) {
+  return list.some(e => e.language === 'Ruby');
+}
+//I actually thought i did pretty well in terms of having simple/ clean code. the some method however, was exactly what I needed. the some method returns true or false
+// depending on if the array contains atleast one element thar passes the test. 
+
