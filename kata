@@ -1717,3 +1717,15 @@ function isRubyComing(list) {
 //I actually thought i did pretty well in terms of having simple/ clean code. the some method however, was exactly what I needed. the some method returns true or false
 // depending on if the array contains atleast one element thar passes the test. 
 
+this was actually my first 6 kyu. I may have done one before, but not in 7 minutes
+function allContinents(list) {
+ // I need to to determine if each continent is there. so this is true or false. 
+  //if each continent is accounted for, true. 
+  // I could create an array and if the continent isnt found in the array, i push it into the 
+  // array. if the array length is 5, its a true statment. 
+  let arr = [];
+  list.filter(x => arr.includes(x.continent) ? console.log('its here') : arr.push(x.continent) )
+  console.log(arr)
+  return arr.length === 5 ? true : false
+}
+
