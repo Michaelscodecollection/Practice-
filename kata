@@ -1729,3 +1729,24 @@ function allContinents(list) {
   return arr.length === 5 ? true : false
 }
 
+function isAgeDiverse(list) {
+let Ages = list.map(x => x.age.toString().split('').slice(0,1))
+let container = [1,2,3,4,5,6,7,8,9]
+return Ages.every(x => container.includes(x)) && list.some(x => x >= 100) ? true : false
+}
+
+function isAgeDiverse(list) {
+  return list.some(h => h.age >= 100) 
+  ? [10,20,30,40,50,60,70,80,90].every(e => list.some(x => x.age - e >= 0 && x.age - e <= 9))
+  : false;
+}
+// okay so i was on the right track. I basically used all teh right methods, it just wasnt ordered properly. 
+// I was also trying a much harder approach honestly. 
+// so in the most effecient solution, he used list.some(meaning hes checking if h is greater than or equal 100. if that is true, we create our array of parameters and use
+// the every method to test if 
+
+function getAverageAge(list) {
+ // okay so i need to add all the ages up and the divid by the length
+  return Math.ceil(list.map(x => x.age).reduce((curr,next) => curr + next) / list.length) 
+}
+
