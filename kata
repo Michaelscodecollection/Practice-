@@ -1749,4 +1749,83 @@ function getAverageAge(list) {
  // okay so i need to add all the ages up and the divid by the length
   return Math.ceil(list.map(x => x.age).reduce((curr,next) => curr + next) / list.length) 
 }
+function getCount(str) {
+  var vowelsCount = 0;
+  let vowels = ['a','e','i','o','u']
+  let arr = str.split('')
+  console.log(arr)
+ return arr.filter(x=> vowels.includes(x)).length
+}
 
+function getMiddle(s) {
+  var middle = s.length / 2;
+  // create middle variable. middle is length / 2
+  // glad because this is exactly how i approached it myself.
+   console.log(0 ? 'hi' : 'bye')
+  console.log(s.charAt(0))
+  console.log(Math.floor(middle))
+  // so chatAt can be used to return or deal with a value in a string
+  // you can target this without having to split('') to create
+  // an array of values to seperate. 
+  return (s.length % 2) 
+            
+    ? s.charAt(Math.floor(middle))
+              
+              
+              // here we split and round down
+  // so because the returning value oof s.length % 2 === 0 
+  // 0 is considered a falsy statment, so we place the even
+ // value in the false place.
+
+              
+    : s.slice(middle - 1, middle + 1);
+  console.log(s.slice(middle-1, middle + 1))
+}
+
+
+function validateWord(s, c = s.toLowerCase())
+{
+  return c.length % new Set(c).size == 0
+  console.log(c.length % new Set(c).size == 0, c)
+  // so the length of c (which is the old array but all lowercase)
+  // c.length % new Set(c).size
+  console.log(c.length, new Set(c), new Set(c).length)
+  // the new Set(c) already creates a arrayy of only unique values, so using size
+  // is kind of over kill. well its not because youre using a different menthod than length
+  //
+  // so new Set(c) creates a new object that holds the unique elements 
+  // of the string. 
+  // so we take the length, which is the total number of elements involed
+  // and we divide it by the total number of unique elements. meaning
+  // that if all the unique elements have a pair, we will have a remainder of 0
+  // if there is only 1, itll be divinded by 1. 
+  // so we create the length, we create a new object that has all the unique values
+  // we we divide the two values to see if there is a remainder.
+  // new Set(c) creates the object containing all the unique values
+  // and size gives back a number value of how many of those objects are unique
+}
+
+function isLanguageDiverse(list) {
+  list = list.map(dev => dev.language);
+  const num = [...new Set(list)].map(el => list.filter(e => e === el).length);
+  console.log(num, list, 'hi')
+  // so we create a new set of data using the list we created and we organize
+  // that data by filtering each language into its own array and measuring the length
+  // of that array.
+  return Math.max(...num) / Math.min(...num) <= 2
+  // wee then take the max and divide it by the min. if its less than or equal to two we have 
+ // true statment 
+// filter and length will give you a number value of the objects/ elements that fit the criteria that you are looking for
+}
+// so i actually thought about using the new method as i knew
+// i wuld need to create new data out of the old data
+//so from start to finish we take the list and map out only the languages
+// we then come up with the numbers from our data colection. 
+//after we have the languages isolated, we create the num
+//num is going to be a function that creates a new array with a spread
+//operator. we create a new list array, which now only contained
+// the lanuages we map this out and filter
+// so a new object of information is created that maps and then filters the elements.
+// the filters grabs the current element and then filters the list for that element
+// to only grab the languages that match it. we then have an array of only the list of elements
+// that match the current language. we then measure the length and that numb
