@@ -1847,3 +1847,17 @@ console.log(x.split('').map(c=>c.charCodeAt(0)).join('').split('').map(Number).f
 // like say theres 2 7s, thats a length of 2.  we know that 7-1 is 6 => 6 * 2 is 12. 
 // I need to pay more attention to the outcome. I can do well with starting with the breakdown
 // of the outcome and then reverse engineering
+function findOddDigits(n, k) {
+console.log(n,k)
+  // so we want to return k amount of odd digits from the given n
+  //number.
+  // return 0 if there are no odd numbers, k > n.length
+  //k= 0 or k > the number of odd digits
+  
+  let arr = String(n).split('').map(x=> parseInt(x))
+  let odd = arr.filter(x=> x % 2 === 1)
+  console.log(odd)
+  let oddNumber = parseInt(odd.map(x=>String(x)).slice(0,k).join(''))
+  console.log(oddNumber)
+  return odd.length === 0 || k > odd.length || n.length <= k || k === 0 ? 0 : oddNumber
+}
