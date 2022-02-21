@@ -1829,3 +1829,21 @@ function isLanguageDiverse(list) {
 // the filters grabs the current element and then filters the list for that element
 // to only grab the languages that match it. we then have an array of only the list of elements
 // that match the current language. we then measure the length and that numb
+
+
+function calc(x){
+   let arr = x
+    .split('')
+    .map(c => c.charCodeAt(0))
+    .join('')
+    .split('')
+    .map(Number)
+    .filter(x => x === 7)
+    .length * 6
+console.log(x.split('').map(c=>c.charCodeAt(0)).join('').split('').map(Number).filter(x => x === 7).length * 6)
+}
+
+// so really were using the equation to create multiple 7 - 1. so depending on the length of the filter
+// like say theres 2 7s, thats a length of 2.  we know that 7-1 is 6 => 6 * 2 is 12. 
+// I need to pay more attention to the outcome. I can do well with starting with the breakdown
+// of the outcome and then reverse engineering
