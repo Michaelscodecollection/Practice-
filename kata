@@ -1861,3 +1861,24 @@ console.log(n,k)
   console.log(oddNumber)
   return odd.length === 0 || k > odd.length || n.length <= k || k === 0 ? 0 : oddNumber
 }
+
+function digitize(n) {
+n = n.toString().split('')
+ return n.map(x=> parseInt(x))
+}
+
+function isAgeDiverse(list) {
+  return list.some(h => h.age >= 100) 
+  ? [10,20,30,40,50,60,70,80,90].every(e => list.some(x => x.age - e >= 0 && x.age - e <= 9))
+  : false;
+  // so first we check to see if atleast one variable is greater than or equal
+  //to 100. if it is true, we check to make sure that every are is atleast greater than the baseline for being a teen
+  // so we create a test that if passed,must go through one more test, which will determine the final true or false return
+} // okay so we take the array we can call arr
+// we use the every method to ceck if fits in the parameters. we take the numbers and we tell the computer it needs
+// to pass the test. theres multiple for loops going. each list item will get paid withh each list of the array
+//if the age- arr[i] is greater than or = 0, and if the age- e is greater than 9 because were really only
+//for if the number is a teen at the very least, any number on top of that is fair game.
+// i got stuck in my toString method approach and was trying to figure out how to prove the hundred and up
+// I wasnt thinking right, I didnt try to understand the questions/ what the solution will look like
+// in this case, the soolution is a test to see if the given list is representative of the age groups. 
