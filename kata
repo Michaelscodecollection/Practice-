@@ -1882,3 +1882,16 @@ function isAgeDiverse(list) {
 // i got stuck in my toString method approach and was trying to figure out how to prove the hundred and up
 // I wasnt thinking right, I didnt try to understand the questions/ what the solution will look like
 // in this case, the soolution is a test to see if the given list is representative of the age groups. 
+
+
+function printerError(s) {
+
+  // so i need to determine how many of the string characters are in between a-m. or in other 
+  // words how many characters of the string are outside of the parameters a-m.
+  // the return value is going to be represnted as a fraction. how many of the characters 
+  // (length) are errors. this value will be passed as a string, not a number.
+  let param = ['a','b','c','d','e','f','g','h','i','j','k','l','m']
+  let arr = s.split('')
+  let search = arr.filter(y => !param.includes(y)).length
+  return `${search}`+'/'+`${s.length}`
+}
