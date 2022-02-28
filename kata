@@ -1895,3 +1895,7 @@ function printerError(s) {
   let search = arr.filter(y => !param.includes(y)).length
   return `${search}`+'/'+`${s.length}`
 }
+
+function vaporcode(string) {
+  return string.toUpperCase().split(" ").join("").split("").join("  ");
+}
