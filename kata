@@ -1899,3 +1899,12 @@ function printerError(s) {
 function vaporcode(string) {
   return string.toUpperCase().split(" ").join("").split("").join("  ");
 }
+
+function solve(s){
+    
+  let length = s.length  
+  let lowerCaseLength = s.split('').filter(x => x.toLowerCase() === x).length
+  let upperCaseLength = s.split('').filter(x => x.toUpperCase() === x).length
+  console.log(lowerCaseLength, upperCaseLength )
+  return lowerCaseLength >= upperCaseLength ? s.toLowerCase() : s.toUpperCase()
+}
