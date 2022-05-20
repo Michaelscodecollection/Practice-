@@ -1911,3 +1911,14 @@ function solve(s){
 function isRubyComing(list) {
    return list.some(param => param.language === 'Ruby')
 }
+
+function getFirstPython(list) {
+let py = list.find(x => x.language === 'Python') 
+return py !== undefined ? `${py.firstName}, ${py.country}` : 'There will be no Python developers'
+  }
+  
+  function getFirstPython(list) {
+  let arr = [];
+  list.map(x => x.language === 'Python' ? arr.push(x) : console.log('bitch') )
+  return arr.length > 0 ? `${arr[0].firstName}, ${arr[0].country}` : 'There will be no Python developers'
+}
