@@ -1922,3 +1922,17 @@ return py !== undefined ? `${py.firstName}, ${py.country}` : 'There will be no P
   list.map(x => x.language === 'Python' ? arr.push(x) : console.log('bitch') )
   return arr.length > 0 ? `${arr[0].firstName}, ${arr[0].country}` : 'There will be no Python developers'
 }
+function countLanguages(list) {
+  var count = {};
+  //okay so my inclination was correct. I can create an object the 
+  // same way i create an array.
+  //I use the forEach methodto target the element in the given array.
+  // I want the language element. so for each object in the array,
+  // so the element is creates by the array. we then set that specific element = to either
+  //0 (meaning it was created) or + 1 from what it is currently if called. its either created/ set to 0
+  // or we add. 0 & 1 letting the computer know this is a number value
+  list.forEach(x => count[x.language] = (count[x.language] || 0) + 1);
+  // you can access amd create the index of an array by name, not just number/
+  // so we use for each to access each iteration of the array. we create a obj to push info into
+  // each language will either be set to 0 or we will add 1
+ return count
