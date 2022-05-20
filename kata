@@ -1908,3 +1908,6 @@ function solve(s){
   console.log(lowerCaseLength, upperCaseLength )
   return lowerCaseLength >= upperCaseLength ? s.toLowerCase() : s.toUpperCase()
 }
+function isRubyComing(list) {
+   return list.some(param => param.language === 'Ruby')
+}
