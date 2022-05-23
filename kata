@@ -1936,3 +1936,24 @@ function countLanguages(list) {
   // so we use for each to access each iteration of the array. we create a obj to push info into
   // each language will either be set to 0 or we will add 1
  return count
+function isSameLanguage(list) {
+ return list.every((e,i) => e.language === list[0].language )
+  //I kept trying to compate e to e which is the same thing. i needed to compare e to the list
+}
+
+function findSenior(list) {
+  console.log(list)
+  // return oldest develper and include all developers who are the same age. developers must appear in the order they
+  // arrive in. 
+  // so age = 0.
+  let highestAge = 0;
+  list.map(x => x.age > highestAge ? highestAge = x.age : console.log('young blood'));
+  return list.filter(x => x.age === highestAge)
+}
+function allContinents(list) {
+let continents = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+let arr = []
+list.map(x => arr.includes(x.continent) ? console.log(true) : arr.push(x.continent))
+ return arr.length === 5 ? true : false
+  
+}
