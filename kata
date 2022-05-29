@@ -1957,3 +1957,5 @@ list.map(x => arr.includes(x.continent) ? console.log(true) : arr.push(x.contine
  return arr.length === 5 ? true : false
   
 }
+
+
