@@ -1958,4 +1958,14 @@ list.map(x => arr.includes(x.continent) ? console.log(true) : arr.push(x.contine
   
 }
 
+function stairsIn20(s){
+//   let arr = s.reduce((x,y)=> x+y)
+//   let arr2 = arr.map(x => x)
+//   console.log(arr2)
+  let merged = [].concat.apply([], s);
+  let reducer = merged.reduce((x,y)=> x+y)
+  return reducer * 20
+  
+}
+
 
