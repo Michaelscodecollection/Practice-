@@ -1972,6 +1972,15 @@ function mxdiflg(a1, a2) {
   let l1 = a1.map(str => str.length)
   let l2 = a2.map(str => str.length)
   return Math.max(Math.max(...l1) - Math.min(...l2), Math.max(...l2) - Math.min(...l1))
+  
+  function mergeArrays(a, b) {
+  return [...new Set(a.concat(b))].sort((a,b)=>a-b)
+  // so i can return a ...new array set(with the path for and to the data written in here)].sort()
+}
+
+function mergeArrays(arr1, arr2) {
+  return Array.from(new Set(arr1.concat(arr2).sort((a,b) => (a-b))));
+}
 }
 
 
