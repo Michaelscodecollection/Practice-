@@ -2048,4 +2048,48 @@ var romanToInt = function (s) {
     
 };
 
+var romanToInt = function(s) {
+    //okay so im going to recieve a roman numeral which the computer needs to translate to integer values. 
+    // first we have to define the relationships between the data. we do this by creating a const valueList = new MAP()
+    // we then create the unique sets of int and numerals and place them into the map which act as key values for one another.
+    // the values get added from right to left if the value to the left is greater and is subtracted if the vaalue to the left is less than the value to the right.
+    // we have sets of roman numerals and integers that are associated with one another as key values. they are tied together in meaning. 
+    // we recieve the value --> we start from right to left and we translate each value from its roman numeral to its integer value, and then depending on the value to the left, we add or subtract. 
+    // we start with an inital value of let intialValue = s[-1] meaning we start with the value on the far right and begin to add and subtract.this initial Value is what we use in our adding and subtracting
+    // we will construct a for loop that will go n = s.length - 1 times and we will start from the -2 position since the - position is already accounted for.
+    
+    // first we create our MAP()
+    const valueList = new Map();
+    // not we create sets
+    valueList.set('I',1)
+    valueList.set('V',5)
+    valueList.set('X',10)
+    valueList.set('L',50)
+    valueList.set('C',100)
+    valueList.set('D',500)
+    valueList.set('M',1000)
+    
+    const len = s.length 
+    // then we grab the last index of s and use it as a key value for getting the associated integer from our Map()
+    let initialValue = valueList.get(s[len-1])
+    
+    // so we have the initial value, we have the Map() and sets, we have the len of our for loop, now its time to construct the for loop
+    for(let i=len-2; i>=0; i--){
+        if(valueList.get(s[i]) >= valueList.get(s[i+1])){
+            initialValue += valueList.get(s[i])
+        }else{
+            initialValue -= valueList.get(s[i])
+        }
+    }
+    return initialValue
+    
+};
+// what did i do wrong? 
+//I used a const when i should have used let
+// the for loop was great but i compared the values wrong
+//my for loop was off by 1 digit because of how i tried to address the length
+// i used the wrong (non existent) variable. other than that I did great constructing the logic required to engineer
+// the final product.
+
+
 
