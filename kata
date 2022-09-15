@@ -1983,4 +1983,69 @@ function mergeArrays(arr1, arr2) {
 }
 }
 
+// roman numberals are usually written from largest to smallest in integer representation
+// from left to right
+// when the value to the left is less than the value to the right, that means we have to subtract it.
+// so if were going from right to left, we should be increasing in size and adding the values together.
+// if on our journey from right to left the value to the left is less than the value to the right, thenn we subtract
+// so if arr[s.length - 1] < arr[s.length ] ? currentCummulativeValue--
+// if arr[s.length - 1] > arr[s.length] ? currentCumulativeValue++
+//  arr[s.length - 1] > arr[s.length] ? currentCumulativeValue++ : currentCumulativeValue--
+
+
+
+
+var romanToInt = function (s) {
+    // Map to store romans numerals
+    const romanMap = new Map();
+    // first we create a MAP() which is an object which holds key value sets
+    // Fill the map
+    romanMap.set('I', 1);
+    romanMap.set('V', 5);
+    romanMap.set('X', 10);
+    romanMap.set('L', 50);
+    romanMap.set('C', 100);
+    romanMap.set('D', 500);
+    romanMap.set('M', 1000);
+    // then we tie together the integer value and the roman numberal using set() nmethod which ties
+    // them together as key values for one another
+    // Length of the given string which gets translated into the value we use in our for loop
+    const n = s.length;
+    // then we capture the length so we know how many roman numerals were dealing with
+    // Variable to store result
+    let currentTotal = romanMap.get(s[n - 1]);
+    // grabs the furthest to the right index and stores that as the initial value.
+    // so we have our initial value which is why we cant go through the for loop for the span of the 
+    // full array. we can only use the indexes after -1
+    
+    // Loop for each character from right to left
+    // ** not sure why this is used yet
+    // num holds the current value
+    // we start at 
+    for (let i = n - 2; i >= 0; i--) {
+       // we start at n-2 because our intial value already starts at n-1. we want to go from
+        // arr[n-2] to arr[0] so we create a for loop that starts off at n-2 and decreases until it reaches the equal index which is included with an = sign. 
+        if (romanMap.get(s[i]) >= romanMap.get(s[i + 1])) {
+            // here we create the parameters for addition or subtraction based off whether the value
+            // next to it is larger or smaller. 
+            // we then get the key value pairs associated with the indexes from right to left
+            // if the value on the left is greater
+            // then that means we are using addition
+            // if the value on the left is less than
+            // then we subtract.
+            
+            // so we create a function that splits the string we recieve into individal roman numberals
+            // we then use the Map() method to create key value pairs that associate integers with their roman numerals. We use this from grabbing the integer values later. this is what we use to teach the computer how to interpret roman numberals into integers. we create the associations using set() methods. once we have created our Maps, inputted the key value pairs we then move to have our computer interpret the string into its integer value. we first set up our initial value which will be the value furthest to the right. our intention is to go from right to left and depending on the values subtract or add to the current sum. we do this by first capturing the length of the string and then making the currentTotal Value = to n-1, which is equal to the value representation of the last index holding a value. Now that we have our intial value we can start coinstructing a for loop to start the process of adding the values. since we already captured the last index which is s[n-1], that value is already accounted for and must be ignored when going through the interpetation process. since we are moving from right to left, the starting place/ value is going to be s[n-2] and we start woprking towards the zero index. that means our for loop will start ar n-2 and will decrease until it = 0. for each iteration we want to compare the current index is greater than the index to the right then we add. this for example, allows for the n-2 value to have a comparison in n-1. each value needs a comparison to understand whether we add or subtract. 
+           
+            
+            currentTotal += romanMap.get(s[i]);
+        } else {
+            currentTotal -= romanMap.get(s[i]);
+        }
+    }
+    return currentTotal
+    
+    
+};
+
 
