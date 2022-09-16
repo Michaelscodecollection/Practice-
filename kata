@@ -2092,4 +2092,30 @@ var romanToInt = function(s) {
 // the final product.
 
 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+    // we recieve an array and we are to return 
+    // the digits that together add up to the target number we also recieve. we can assume there is only one solution per input of the function and we can return the solution in any order
+    // the output will be the index number, not the index value. 
+    
+    // first im going to recieve the nums array. each index will need to be added by all the other indexes - the current index. 
+    // so maybe i map(and then within that map i create a for loop that goes for all the indexes - the current. i may be able to use some code from my previous problem.) 
+    // i then am going to search for any pair of numbers that add up to the target value. 
+    
+    //arrange
+var twoSum = function(nums, target) {
+    // okay so i had the right idea for two for loops. honestly i should have just kept it simple and done two for loops before bringing other methods into the mix. it would have been much simpler because i i would just be dealing with i and j values. 
+    // this for loop returns during the for loop so it returns the first two values that meet the criteria. i dont know why i didnt think i could return during the for loop. for some reason i wanted to finish going through all potential values before returning but i see now this would just be waisting time as far as the requested solution goes. 
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] == target) {
+                return [i, j]
+            }
+        }
+    }
+};
 
