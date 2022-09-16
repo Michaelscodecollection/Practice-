@@ -2119,3 +2119,31 @@ var twoSum = function(nums, target) {
     }
 };
 
+
+----- cleaner solution
+var twoSum = function(nums, target) {
+    const indices = {};
+   // create an object for the index values
+// okay so my instinct of using a forEach method with a for loop was correct. i just need to figure out where i went wrong
+    // here we tap into the nums array and we make each item we are places in the indices object = to the index, this pairs the value with the index number.
+    nums.forEach((item, index) => {
+        indices[item] = index
+    
+    });
+    console.log(indices)
+// we then set up the for loo which starts at zero and goes for the length of the nums arr
+    for (let index = 0; index < nums.length; index++) {
+        
+        const complement = target - nums[index];
+// this seems to be a different approach all together. this solution isnt searching for the answer in the nums array, it takes the target subtracts the current iteration value
+        // 9 - 7 === 2. if indices !== undefined (meaning it is empty && indeces[complement] !== index) meaning two of the same idex is present, then we return the two values.
+        // its important to note that the for each function resolves first meaning it has a list of all the pairs. each value num value acts as a key value to the index value.
+        // indices[complement] then is targeting the value 7's index association, which is one. 
+        
+        if (indices[complement] !== undefined && indices[complement] !== index) {
+            // return [index, indices[complement]]
+        }
+    }
+    
+};
+
