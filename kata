@@ -2147,3 +2147,47 @@ var twoSum = function(nums, target) {
     
 };
 
+var romanToInt = function(s) {
+    //okay so i already sort of know what it is i want to do. Im going to recieve a string of Roman Numerals. Those roman numerals are directly correlated with a value. from right to left we can add and subtract the values depending on whether the next value is greater than or less than. we want to start off from the right side of the string, translate each value into their correlating integer value, find the sum, and return the integer value. Each roman numeral has its own value which is associated with it. these values are unique. 
+    // using a Map and setting the values makes the most sense. we will create the relationships between the roman numeral and integers by setting the values tohgether in a Map()
+    // we will then go through each integer, determine the <> nature of the values, add em up, and return.
+    let romanList = new Map();
+    
+    romanList.set('I',1)
+    romanList.set('V',5)
+    romanList.set('X',10)
+    romanList.set('L',50)
+    romanList.set('C',100)
+    romanList.set('D',500)
+    romanList.set('M',1000)
+    
+  
+    // okay so i need a value which will hold the intial value 
+    // and i need a value that captures the length of the array for my for loop. the for loop will go from the end of the array to the zero index. we in our for loop will do s.length - 1 because our initial value for totalValue starts with the last index already accounted for. 
+    
+    let n = s.length 
+    let totalValue = romanList.get(s[n-1])
+    console.log(n, totalValue, romanList)
+    
+    // now I need to go through each value and construct the necessary for loop. we do n - 2 so that we can start with the index before the last since the last index is our intial value.
+    
+    for(let i = n - 2; i >= 0; i--){
+        
+        if(romanList.get(s[n]) <= romanList.get(s[n-1])){
+           totalValue -= romanList.get(s[i])
+           }else{
+               totalValue += romanList.get(s[i])
+           }
+    }
+    return totalValue
+    
+    // I made a couple mistakes. firstly i didnt use get. I tried treating my Map() like an array. I need to treat it more like a data structure that i target with gets. its kind of cool because you can act with Map similarly to how you can engage with backend code. Thats why i have to realize. my tactics with grabbing code from data bases does not have to be specific to https requests or rest APIs. I can get, set, etc. 
+    // i also didnt engineer the for loop correctly.
+    // so i knew what to do, im still just struggling to get the information i want and target precisely with my for loops. im excited though because i feel like im developing a good relationship to for loops. 
+    // I basically figured it out without help in a couple minutes. what i should have done before switch the the answer key
+    // was figure out if i was setting and getting wrong. i didnt even write down get so its hard, but i know i was getting a 
+    Nan error in my console log which should have given me the red flag that I wasnt getting the correct value.
+    deep down I knew it too. i immedietly looked at the lines of code that were supposed to have "get" and knew something was missing. 
+    
+};
+
