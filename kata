@@ -2191,3 +2191,40 @@ var romanToInt = function(s) {
     
 };
 
+function sum() {
+  var total = 0;
+  // so we set up our container to hold the value.
+  // we then initialize i.
+  // it seems that arguments is assumed to be the input value
+  //
+  
+  for(var i in arguments){
+//   console.log(arguments)
+    total += arguments[i];
+    // i is made the representative of all key values in the object
+    // arguments represent value in the incoming values
+    console.log(i)
+    // i represents the key for each element and arguments
+    // represents the key VALUE itself. if we wanted to go deeper into 
+    // we could do arguments[i]
+    // so i represents the key for each elements and arguments represents the
+    // value. so the for loop reads as such
+    // for as many keys are there are, we will loop until all values
+    // are accounted for. for each key we look in we will target the value
+    // we will go for as many keys there are that have value. 
+    // for as many arguments there are associated with the first layer of keys
+    // for as many keys that have key values in them.
+    
+
+  }
+//   return total;
+  // the reason i didnt understand how to solve is because i 
+  // didnt understand the value of for in AND
+  // i didnt understand the nature of the data structure i was
+  // dealing with. it would have been more valuable to play
+  // with the incoming data a little more to truly understand what i 
+  // was working with. now that i know, the solution makes way more sense
+  
+  
+}
+
