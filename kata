@@ -2228,3 +2228,33 @@ function sum() {
   
 }
 
+var twoSum = function(nums, target) {
+let indeces = {}
+ 
+    nums.forEach((x,i)=>{
+        indeces[x] = i
+    })
+    // creates database correlation between index and each value. 
+    // we do this because we use the index and values as key values for one another.
+    
+    for(let i=0; i<=nums.length;i++){
+        let complement = target - nums[i]
+        // we create our complimentery number which is our target number - (any number between n and nums.length)
+        
+        
+if (indeces[complement] !== undefined && indeces[complement] !== i){
+    // if the indeces[0,1,2,...] !== undefined, meaning that it does indeed exist && indeces[0,1,2,...] !== the current index number, which it cant be the same as the index because those two values can add up. were looking for different values and we have two opportunities to use the same two numbers, so in a four loop there are four seperate conditions we come across that satisfy our code. those four conditions use the two values we are trying to identify. 
+  
+}
+    }
+  
+    // i forgot that im returning the indeces associaterd with the value. 
+    // i was trying to hard get the value I forgot what my actual target was.
+    // i didnt spend anytime really trying to undertand the problem. i need to come up with a better and faster solution for breaking down problems, understanding the data im working, and creating a map to the solution.
+    // im getting too antsy. i get overwhelmed. i need to take the time to craft and engineer an understanding of the problem, the data, and the solutuin. i should researchb solutioms
+    // i need to come up with a fiull proof step by step approach for solving these problems. i need to deconstruct and then construct. 
+    // i need to slow down. rushing isnt going to get me to the solution any faster. in fact its quite the opposite. i need to be vulnerable with my intelligence. i need to hold the problem in place and wrestle with it. i dont want to try that hard because deep down im afraid i cant solve it, but i can. there is no me. there is only human potential. I need to break down all the info for my brain
+    
+    
+};
+
