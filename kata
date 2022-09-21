@@ -2315,3 +2315,11 @@ var romanToInt = function(s) {
     return total
 };
 
+function onePunch(items){
+  return (items === undefined || items === null || items === '') ? 'Broken!' : [...items].filter(x=> x.toLowerCase() !== 'a' && x.toLowerCase() !== 'e').join('').split(' ').sort().join(' ')
+} 
+const onePunch = ($) => typeof $ !== 'string' ? 'Broken!' : $.split(' ').sort().join(' ').replace(/[ae]/gi, '') || 'Broken!'
+  // so first we identify if the $ is a string. if it isnt, that means we are retuning 'Broken'
+  // if it is a string, then we split(' ').sort() which goes ahead and splits all the words
+  // into their own index and sorts them alphabetically. we then join and replace using the replace method replace(/[ae]/gi, '') || 'Broken if the incoming value doesnt allow'
+  
