@@ -2258,3 +2258,30 @@ if (indeces[complement] !== undefined && indeces[complement] !== i){
     
 };
 
+var twoSum = function(nums, target) {
+// go slow
+    // we get a list of nums and we get a target. 
+    // from the list of numbers, we need to return the two indeces of the integers that add up to the target value.
+    // I am returning the index value of the numbers. 
+    // i need to bring together the values and the index values. they need to act as key values for one another.
+    // im going to go through the nums and for each elements, i will place the index value and the numerical value into a data base to pull from later. im constructing the data structure that works for me. 
+    // after that i need to determine which values add up to the target value and return the index values of those two numbers. 
+    let container = new Map()
+    
+    nums.forEach((x,i) =>{
+        container.set(x,i)
+    })
+   
+    
+    for(let i = 0; i<= nums.length; i++){
+        // what am i doing? I am subtracting the target value by nums[i] and if i find the sum of that number in nums, im going to return the current index and the index associated with the sum.
+        let complementary = target - nums[i]
+        if(target - nums[i] !== undefined && target - nums[i] !== i){
+           return [i, container.get(complementary)]
+        }
+    
+        
+    }
+    
+};
+
