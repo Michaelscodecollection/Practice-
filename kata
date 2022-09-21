@@ -2285,3 +2285,33 @@ var twoSum = function(nums, target) {
     
 };
 
+var romanToInt = function(s) {
+    // Im going to take in s, which is a string of letters that represent Roman Numerals. My job is to scan the string, and add and subtract the values based on each numbers relationship top the vale on the left. at the end I will return the final sum as an integer.
+    let romanInt = new Map();
+    
+    romanInt.set('I',1)
+    romanInt.set('V',5)
+    romanInt.set('X',10)
+    romanInt.set('L',50)
+    romanInt.set('C',100)
+    romanInt.set('D',500)
+    romanInt.set('M',1000)
+    
+    // slow down. 
+    // okay ive created my data structure. im going to test that its working and then its time to construct the for loop. im going to be adding values up so i need a variable to store the sum in. that variable will start with the - index value and then we will work to the left from there adding and subtracting as needed. 
+    let len = s.length 
+    let total = romanInt.get(s[len-1])
+    for(let i = len - 2; i >= 0; i--){
+        if(romanInt.get(s[len]) <= romanInt.get(s[len-1])){
+            total -= romanInt.get(s[i])
+            // okay so i really wasnt paying attention to what i was writing and what was going to happen as a resuklt. the thing that made my code not work was where i placed the >,<,= values in the code. I just wasnt paying attention to how the data was functioning within the code,. what is this actually doing? etc. 
+            
+            // if the current roman numeral has an int value less than or equal to the roman numeral integer value to the left, meaning the number value ascends or stays the same from right to left, then we want to subtract. if the current int value is greater than or equal to (because its an else condition which means all other possibilities lead this direction) that means we are going to add the int value to the total. 
+            // the biggest issue is that im not connected to what im writing in relation to the data im constructing. I can be but it requires a much greater intentional focus then im  providiing which i think is because I dont believe I can actually hold all this stuff in my head. I keep everything at a distance. I need to invite the logic in and play with it, even if that means im writing stuff out alot more
+        }else{
+           total += romanInt.get(s[i])
+        }
+    }
+    return total
+};
+
