@@ -2322,4 +2322,75 @@ const onePunch = ($) => typeof $ !== 'string' ? 'Broken!' : $.split(' ').sort().
   // so first we identify if the $ is a string. if it isnt, that means we are retuning 'Broken'
   // if it is a string, then we split(' ').sort() which goes ahead and splits all the words
   // into their own index and sorts them alphabetically. we then join and replace using the replace method replace(/[ae]/gi, '') || 'Broken if the incoming value doesnt allow'
-  
+
+var romanToInt = function(s) {
+// go slow
+    // what is the data coming in and what do i need to do with it?
+    // I am recieving a string of roman numerals which must individually be translated into their integer values and added/subtracted to represent the roman numeral as a whole in its integer value form. 
+    //  roman numerals are written from largest to smallest from left to right. XII is 27 from left to right we add I + I + X. this gives us 27.
+    // if the value on the left decreases that means we are subtracting the int value from the total.
+    // I need to create a relationship between the symbol and value. I can do this by creating a data structure of key values using the Map() method. 
+    // I know i need to go through each letter and make the translation. Im starting from the left and moving my way to the right. my initial value will be the -1 index.
+    // where am I and where am i going.
+    
+    // first create the data structure. 
+    let romanInt = new Map()
+    
+    romanInt.set('I',1)
+    romanInt.set('V',5)
+    romanInt.set('X',10)
+    romanInt.set('L',50)
+    romanInt.set('C',100)
+    romanInt.set('D',500)
+    romanInt.set('M',1000)
+    
+    
+    
+    let n = s.length
+    let total = romanInt.get(s[n -1])
+    
+    // now we have to construct our for loop. the for loop will start at the -2 index because we already have an intial value. it needs to go until the zero index. conditionally we have to determine whether or not each value is lesser or greater in relation to the indeces to the left. 
+    for(let i=n-2; i >= 0; i--){
+        
+        
+        if(romanInt.get(s[i]) >= romanInt.get(s[i+1])){
+           
+            total += romanInt.get(s[i])
+            console.log(romanInt.get(s[i]), romanInt.get(s[i+1]))
+            
+        }else{
+            total -= romanInt.get(s[i])
+                  // okay my instint that n was not supposed to be used was write. i onlyt used tjat property because it was in another final solution but honestly its not a correct solution and i was using it as my answer key. here we just flipped the conditional logic and then used i instead, which was my original instinct. over all it was a succesful approach and im happy with how i approached solcing/ problem solving until i found an optiumal solution. 
+        }
+       
+    }
+ return total
+};
+
+var twoSum = function(nums, target) {
+// okay im recieving nums --> an array of integers
+    // and im recieving target --> the value that two nums must add up to
+    // and im returning the indeces of the two values that add up to the target.
+    // first I want to create a data structure that ties together the integer values to their index.
+    
+    let data = new Map()
+ nums.forEach((x,i) => {
+     data.set(x,i)
+ })   
+    // now i need to construct my for loop. this for loop will start at the zro inded and will scan the entirety of the nums array. I want to take the target value - the int value of the current index -> (complementary number) and test to see if that value can be found in data. if it can be found and its not the current index or is not undefined then we return the index values of both integers.
+    
+    for(let i=0; i<=nums.length; i++){
+        let complementary = target - nums[i]
+        // so now we need to test.
+        if(nums[complementary] !== undefined && nums[complementary] !== nums[i] ){
+            return [i, data.get(complementary)]
+        }
+    }
+    
+};
+
+//I killed this one. the warm up defineitly helped. im slowing down which is good. this time i used a note pad to hold the info in my head
+// i didnt know how to connect and maintain a connection to what was happening while problem solving. for so long my fears of not knowing or understanding
+// my absilute lack of confidence in problem solving made it so that i never learned to just sit with a problem. if i couldnt solve it
+// it just meant i wasnt smart enough to figurte it out. man thats fucked up. i carried that mentality my whole life. 
+// I never believed in myself. nopbody ever pushed me intellectually. its all because i didnt knowhow to learn, think, focus, and regulate.
