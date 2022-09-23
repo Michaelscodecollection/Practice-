@@ -2394,3 +2394,41 @@ var twoSum = function(nums, target) {
 // my absilute lack of confidence in problem solving made it so that i never learned to just sit with a problem. if i couldnt solve it
 // it just meant i wasnt smart enough to figurte it out. man thats fucked up. i carried that mentality my whole life. 
 // I never believed in myself. nopbody ever pushed me intellectually. its all because i didnt knowhow to learn, think, focus, and regulate.
+
+
+var mergeTwoLists = function(l1, l2) {
+    // what did i not understand? I didnt understand the question at all. superficially i thought the question was just asking me to concat two arrays and sort. thats not at all the case. 
+    // I didnt understand nor did i give head to the actual directions "splicing the nodes" I should have looked this up. 
+    // i should have taken the time to research the question. 
+    // i did, but i used youtube to find the answer. learn and repeat. 
+    
+    // create container/ dummy value
+    const dummy = new ListNode(-Infinity)
+    let prev = dummy
+    
+    // now we dont have elements so i have to think differently. this is whyb we use a while loop. 
+    while(l1 && l2){
+        // while l1 and l2 are ture meaning not null
+        if(l1.val <= l2.val){
+        prev.next = l1
+      // this adds l1 to our linked list as a value which gets placed into dummy. 
+        
+        prev = l1
+        // set previous value = l1 which will be compared to the next val
+        l1 = l1.next
+        // we go to the next value in the linkedList
+    } else{
+        prev.next =l2 
+       // add l2 value to dummy
+        // we determin if the next l1 and l2. 
+        prev = l2
+        l2 = l2.next
+    }
+    }
+    
+    return dummy.next
+    
+};
+
+// so we determine which value is less than or equal. if the value is less than then
+we use the next method to push the value into our dummy, set prev with its new value, and increment the current list value.
