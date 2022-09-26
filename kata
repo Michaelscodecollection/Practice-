@@ -2474,3 +2474,31 @@ var mergeTwoLists = function (l1, l2) {
 
     return headOfNewList.next;
 };
+
+
+
+var twoSum = function(nums, target) {
+// we are given a array of nums and a target
+    // we are to return the indeces of the two numbers that add up to the target value in the nums array
+    // each input has exactly one solution
+    // we are going to go through the array.
+    // first thing is first we need to create a reliable data structure that we can use. we can take the nums and indexes and place them into a new Map() so that we can create key values.
+    // after we construct the data structure we can startr comparing values. we can first subtract the current index from the target value and we can see if that value is present in the array. if that value is present ( which we identify using the key value) then we return the current index along with the index of the other value.
+    let data = new Map()
+     nums.forEach((x,i) => {
+         data.set(x,i)
+     })
+    console.log(data)
+    
+    // now we construct the for loop
+    for(let i=0; i <= nums.length; i++){
+        let complimentary = target - nums[i]
+        if(nums[complimentary] !== nums[i] && nums[complimentary] !== null){
+            console.log(nums[complimentary], i, nums[i], complimentary)
+            return [i, data.get(complimentary)]
+        }
+    }
+};
+// i didnt target the correct numbers for the conditional statement. this is because i still am not fully understanding what im doing to the data. im just blindly coding with half assumptions and thats
+// why im so stumped anytime things dont work. i need to go slower and really understand what it is im doing with every line of code. 
+
