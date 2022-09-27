@@ -2514,3 +2514,9 @@ function findShort(s){
   return short.length
 }
 
+function findShort(s){
+  return Math.min(...s.split(' ').map(x => x.length))
+}
+// any time there is a min value I can rest assured i can use the Math.min method. here i use Math.min( and then use a spread operator
+// and define that it should be split(' ') by the space between all workds. i then map out that array and create an array with on length values
+// the Math.min method then returns the lowest value in the arr
