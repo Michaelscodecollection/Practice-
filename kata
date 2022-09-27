@@ -2500,5 +2500,17 @@ var twoSum = function(nums, target) {
     }
 };
 // i didnt target the correct numbers for the conditional statement. this is because i still am not fully understanding what im doing to the data. im just blindly coding with half assumptions and thats
-// why im so stumped anytime things dont work. i need to go slower and really understand what it is im doing with every line of code. 
+// why im so stumped anytime things dont work. i need to go slower and really understand what it is im doing with every line of code.
+function findShort(s){
+  console.log(s)
+  
+  let arr = s.split(' ')
+  let short = arr[0]
+  arr.map(x => {
+    if(x.length < short.length){
+      short = x
+    }
+  })
+  return short.length
+}
 
